@@ -78,7 +78,7 @@
         <a href="#"
             class="inline-block px-8 py-3 text-indigo-600 font-bold border border-indigo-600 rounded-full
                   hover:bg-indigo-600 hover:text-white transition-all duration-300">
-            Voir tous les ebooks 🚀
+            Voir tous les ebooks
         </a>
     </div>
 

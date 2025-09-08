@@ -7,12 +7,17 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex gap-6 text-sm lg:text-base">
+
+             <a href="{{ route('home') }}"
+                class="transition {{ request()->routeIs('home') ? 'text-purple-400 font-semibold border-b-2 border-purple-400' : 'hover:text-purple-300' }}">
+                Accueil
+            </a>
             <a href="{{ route('agency') }}"
                 class="transition {{ request()->routeIs('agency') ? 'text-purple-400 font-semibold border-b-2 border-purple-400' : 'hover:text-purple-300' }}">
                 Agence
             </a>
 
-            <a href="#resultats"
+            <a href="{{ route('results') }}"
                 class="transition {{ request()->is('resultats') ? 'text-purple-400 font-semibold border-b-2 border-purple-400' : 'hover:text-purple-300' }}">
                 Résultats
             </a>
@@ -66,6 +71,12 @@
             x-transition:leave-start="opacity-100 translate-y-0 scale-100"
             x-transition:leave-end="opacity-0 -translate-y-10 scale-95">
             <nav class="space-y-4">
+                <a href="{{ route('home') }}" class="block transition-all duration-500 delay-100 {{ request()->routeIs('home') ? 'text-purple-400 font-semibold border-b-2 border-purple-400' : 'hover:text-purple-300' }}" x-show="open"
+                    x-transition:enter="transition ease-out" x-transition:enter-start="opacity-0 translate-y-4"
+                    x-transition:enter-end="opacity-100 translate-y-0">
+                    Accueil
+                </a>
+
                 <a href="{{ route('agency') }}" class="block transition-all duration-500 delay-100 {{ request()->routeIs('agency') ? 'text-purple-400 font-semibold border-b-2 border-purple-400' : 'hover:text-purple-300' }}" x-show="open"
                     x-transition:enter="transition ease-out" x-transition:enter-start="opacity-0 translate-y-4"
                     x-transition:enter-end="opacity-100 translate-y-0">

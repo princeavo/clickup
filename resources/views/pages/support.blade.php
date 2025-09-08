@@ -21,5 +21,6 @@
         <x-section-call :call-to-action="$callToAction" :form-fields="$formFields" />
         <!-- Section Ebook -->
         <x-ebook-carousel />
+        <x-whatsapp-button />
     </section>
 @endsection

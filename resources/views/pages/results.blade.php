@@ -9,5 +9,6 @@
         <x-brand-carousel />
         <x-results.stories :stories="$stories" />
         <x-ebook-carousel />
+        <x-whatsapp-button />
     </main>
 @endsection

@@ -3,7 +3,6 @@
   'title' => "Ton prospect scrolle ? Nous faisons en sorte qu’il s’arrête… clique… et achète.",
   'subtitle' => null,
   'image' => null,
-  'whatsapp' => 'https://wa.me/33612345678',
   'cfg' => [
     'rotateZ' => 8,
     'rotateX' => -10,

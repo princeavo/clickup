@@ -49,6 +49,24 @@ class AgencyController extends Controller
                     'position' => "Growth Hacker",
                     'photo' => 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
                 ],
+                [
+                    'name' => "Jean Dupont",
+                    'role' => "Co-fondateur",
+                    'position' => "Expert Facebook Ads",
+                    'photo' => 'https://sm.ign.com/ign_fr/cover/a/avatar-gen/avatar-generations_bssq.jpg',
+                ],
+                [
+                    'name' => "Marie Martin",
+                    'role' => "Co-fondatrice",
+                    'position' => "Experte TikTok Ads",
+                    'photo' => 'https://lumiere-a.akamaihd.net/v1/images/a_avatarpandorapedia_jakesully_16x9_1098_02_b13c4171.jpeg?region=0%2C0%2C1920%2C1080',
+                ],
+                [
+                    'name' => "Ali Ahmed",
+                    'role' => "Head of Strategy",
+                    'position' => "Growth Hacker",
+                    'photo' => 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+                ],
             ],
         ];
 

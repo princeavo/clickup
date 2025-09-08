@@ -21,4 +21,6 @@
     <x-section-call />
 
     <x-ebook-carousel />
+
+    <x-whatsapp-button />
 @endsection

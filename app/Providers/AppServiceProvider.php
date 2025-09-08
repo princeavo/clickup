@@ -237,5 +237,9 @@ class AppServiceProvider extends ServiceProvider
             $view->with('callToAction', $callToAction);
             $view->with('formFields', $formFields);
         });
+
+        View::composer('components.whatsapp-button', function ($view) {
+            $view->with('whatsappLink', "https://wa.me/33612345678");
+        });
     }
 }
