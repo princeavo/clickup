@@ -10,8 +10,6 @@ class AgencyController extends Controller
     {
         $hero = [
             'badge'       => "Agence Performance Ads",
-            'title'       => "ClickUp — L’agence Facebook & TikTok Ads obsédée par une seule chose : tes ventes.",
-            'subtitle'    => "Nous installons une machine à vendre qui transforme ton budget pub en croissance rentable et prévisible.",
             'button_text' => "Obtenir ton rdv (GRATUIT)",
             'button_link' => "#",
             'image'       => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6844e9c4c42ade07a2fc0151_d5e067220d46bcfa4b1820c210b78054_agence-image.webp', // remplace par ton visuel
@@ -25,10 +23,6 @@ class AgencyController extends Controller
             'cta_text' => "Regarder la vidéo",
         ];
         $aboutSection = [
-            'title' => "Pourquoi nous avons créé ClickUp",
-            'intro' => "Le constat était brutal : trop d'agences vendent du rêve à prix d'or, mais livrent des résultats décevants.
-                    ClickUp naît d'une conviction simple : apporter de la performance réelle avec notre spécialisation Facebook & TikTok Ads.
-                    Notre approche ? Laser-focus sur ces deux plateformes, zéro service inutile, que des résultats qui se voient sur ton compte en banque.",
             'subtitle' => "Derrière chaque campagne, une équipe dédiée à ton succès.",
             'team' => [
                 [

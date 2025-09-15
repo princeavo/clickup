@@ -1,73 +1,84 @@
 @props([
-  'title' => '',
-  'subtitle' => '',
-  'values' => []
+    'values' => [],
 ])
 
-<section class="relative bg-gradient-to-b from-white to-gray-50 dark:from-[#0b1520] dark:to-[#101820] py-24 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 text-center">
+@php
+    $defaults = [
+        [
+            'title' => 'Performance & stratégie',
+            'description' =>
+                'Spécialistes pub qui maximisent ta visibilité, ton ROI et tes conversions. Une seule obsession : tes résultats.',
+        ],
+        [
+            'title' => 'Satisfaction Client',
+            'description' => 'Tes besoins au centre, tes attentes dépassées. On livre plus que prévu.',
+        ],
+        [
+            'title' => 'Innovation & IA',
+            'description' =>
+                "L’intelligence artificielle et l’automatisation sont au cœur de notre ADN. L'objectif : créer des campagnes rentables qui font croître votre business.",
+        ],
+    ];
 
-    {{-- Intro Mission --}}
-    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white
-               opacity-0 translate-y-6 transition-all duration-700 ease-out"
-        x-data
-        x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
-                           $el.classList.add('opacity-100','translate-y-0')"
-        x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
-                           $el.classList.remove('opacity-100','translate-y-0')">
-      {{ $title }}
-    </h2>
+    $values = count($values) ? $values : $defaults;
+@endphp
 
-    <p class="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300
-              opacity-0 translate-y-6 transition-all duration-700 ease-out delay-200"
-       x-data
-       x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
-                          $el.classList.add('opacity-100','translate-y-0')"
-       x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
-                          $el.classList.remove('opacity-100','translate-y-0')">
-      {{ $subtitle }}
-    </p>
+<section class="relative bg-cover bg-center bg-no-repeat py-24 overflow-hidden"
+    style="
+    background-image: url('{{ asset('images/mission-bg.png') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0b1520;">
+    {{-- Overlay pour améliorer le contraste --}}
+    <div class="absolute inset-0 bg-black/10"></div>
 
-    {{-- Valeurs --}}
-    <div class="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-      @foreach($values as $index => $value)
-        @php
-          $direction = $index % 3 === 0 ? '-translate-x-10'
-                     : ($index % 3 === 1 ? 'translate-y-10'
-                     : 'translate-x-10');
-        @endphp
+    <div class="max-w-6xl mx-auto px-6 md:px-10 lg:px-12 text-center relative z-10">
 
-        <div class="group bg-white dark:bg-[#0f1a28] rounded-2xl p-8 shadow-lg relative overflow-hidden
-                    opacity-0 scale-95 {{ $direction }}
-                    transition-all duration-700 ease-out hover:-translate-y-3 hover:shadow-2xl"
-             style="transition-delay: {{ $index * 200 }}ms"
-             x-data
-             x-intersect:enter="$el.classList.remove('opacity-0','scale-95','-translate-x-10','translate-x-10','translate-y-10');
-                                $el.classList.add('opacity-100','scale-100')"
-             x-intersect:leave="$el.classList.add('opacity-0','scale-95','{{ $direction }}');
-                                $el.classList.remove('opacity-100')">
+        {{-- Titre principal --}}
+        <h2 x-data="{ show: false }" x-intersect:enter="show=true" x-intersect:leave="show=false"
+            :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-6'"
+            class="text-3xl md:text-4xl font-extrabold text-white leading-tight transition-all duration-700">
+            Chaque marque mérite <span class="text-orange-400"> d’avoir une vraie d'avoir une vraie machine à vendre
+            </span> derrière son produit
+        </h2>
 
-          {{-- Glow border animée --}}
-          <div class="absolute inset-0 rounded-2xl border-2 border-transparent
-                      group-hover:border-purple-500 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.6)]
-                      transition"></div>
+        {{-- Barre de surlignage animée sous le titre --}}
+        <x-animated-highlight />
 
-          {{-- Icône --}}
-          <div class="text-purple-600 dark:text-purple-400 text-4xl mb-6">
-            <i class="{{ $value['icon'] }}"></i>
-          </div>
+        {{-- Sous-titre animé --}}
+        <p x-data="{ show: false }" x-intersect:enter="show=true" x-intersect:leave="show=false"
+            :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
+            class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto transition-all duration-700">
+            Notre mission est de rendre cela possible, d'abord pour nos clients en Afrique et en Europe, puis dans le
+            monde entier.
+        </p>
 
-          {{-- Titre --}}
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-            {{ $value['title'] }}
-          </h3>
+        {{-- Grille des valeurs --}}
+        <div class="mt-16 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            @foreach ($values as $index => $v)
+                @php
+                    $dir = $index % 3 === 0 ? '-translate-x-6' : ($index % 3 === 1 ? 'translate-y-6' : 'translate-x-6');
+                @endphp
 
-          {{-- Description --}}
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-            {{ $value['description'] }}
-          </p>
+                <div x-data="{ show: false }" x-intersect:enter="show=true" x-intersect:leave="show=false"
+                    :class="show ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 scale-95 {{ $dir }}'"
+                    class="transition-all duration-700 ease-out flex flex-col items-center">
+                    {{-- Pill titre --}}
+                    <div class="mb-6 inline-flex items-center justify-center px-6 py-3 rounded-full border  border-orange bg-black/50 cursor-pointer   backdrop-blur-sm text-orange-400 font-semibold text-lg transition-transform duration-500"
+                        :class="show ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-70'">
+                        {{ $v['title'] }}
+                    </div>
+
+                    {{-- Bloc descriptif centré verticalement --}}
+                    <div
+                        class="rounded-2xl border border-gray-700 p-8 min-h-[220px] w-full bg-black/30 backdrop-blur-sm flex flex-col justify-center text-center">
+                        <p class="text-gray-200 text-base leading-relaxed">
+                            {{ $v['description'] }}
+                        </p>
+                    </div>
+                </div>
+            @endforeach
         </div>
-      @endforeach
     </div>
-  </div>
 </section>

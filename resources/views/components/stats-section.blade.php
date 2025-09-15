@@ -17,12 +17,7 @@
             <span class="text-white">parlent plus fort que nos promesses</span>
         </h2>
 
-        <!-- Ligne -->
-        <div class="w-24 h-1 mx-auto mt-4 bg-gradient-to-r from-[#ffb845] to-[#ff8c00] rounded-full opacity-0 scale-x-50 transition-all duration-700 ease-out delay-150 origin-center"
-            x-data
-            x-intersect:enter="$el.classList.remove('opacity-0','scale-x-50'); $el.classList.add('opacity-100','scale-x-100')"
-            x-intersect:leave="$el.classList.add('opacity-0','scale-x-50'); $el.classList.remove('opacity-100','scale-x-100')">
-        </div>
+        <x-animated-highlight />
 
         <!-- Stats -->
         <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
