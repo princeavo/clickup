@@ -1,94 +1,128 @@
-@props(['title', 'subtitle', 'cta', 'items' => []])
+@props([
+    'title' =>
+        "Arrête de perdre de l’argent <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]'>avec des pubs qui ne vendent pas</span>",
+    'subtitle' =>
+        "Chez <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00] font-semibold'>ClicUp</span> : pas de jolies pubs, des machines à vendre Facebook & TikTok qui rapportent",
+    'points' => ['Tu te concentres sur ton business', 'Chaque € investi rapporte', 'On gère, tu encaisses'],
+    'cta' => ['text' => 'Notre Accompagnement', 'href' => '#'],
+    'items' => [
+        [
+            'title' => 'Rentabilité',
+            'description' => 'Chaque € investi doit rapporter. Sinon, ce n’est pas de la pub, c’est une perte.',
+            'icon' => 'dollar-sign',
+        ],
+        [
+            'title' => 'Expertise',
+            'description' => '350+ campagnes lancées, des millions générés, un savoir-faire éprouvé.',
+            'icon' => 'award',
+        ],
+        [
+            'title' => 'Suivi dédié',
+            'description' => 'Un account manager qui connaît ton business (pas un stagiaire multi-tâches).',
+            'icon' => 'user-check',
+        ],
+        [
+            'title' => 'Tranquillité',
+            'description' => 'On gère, tu dors. Tes pubs tournent et tes ventes tombent.',
+            'icon' => 'moon',
+        ],
+    ],
+])
 
-<section
-    x-data="{ shown: false }"
-    x-intersect="shown = true"
-    x-intersect:leave="shown = false"
-    class="relative py-20 bg-[#0a1f2d] text-white overflow-hidden">
-
-    <!-- Halo décoratif -->
+<section x-data="{ shown: false }" x-intersect="shown = true" x-intersect:leave="shown = false"
+    class="relative py-16 md:py-20 bg-gradient-to-b from-[#0b0f17] via-[#0a0f16] to-black text-white overflow-hidden">
+    <!-- Fond halo -->
     <div class="absolute inset-0 -z-10">
-        <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-0 right-0 w-[400px] h-[400px] bg-pink-500/20 rounded-full blur-2xl animate-pulse delay-700"></div>
+        <div class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-[#ff8c00]/15 blur-3xl"></div>
+        <div class="absolute -bottom-40 right-[-10%] w-[520px] h-[520px] rounded-full bg-orange-500/10 blur-3xl"></div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-6 text-center relative z-10">
+    <div class="max-w-6xl mx-auto px-6 lg:px-10">
+        <!-- Haut -->
+        <div class="grid md:grid-cols-2 gap-10 lg:gap-14 items-start">
+            <!-- Col gauche -->
+            <div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
+                class="transition-all duration-700 ease-out">
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+                    {!! $title !!}
+                </h2>
+                <div class="w-20 h-[3px] mt-5 rounded-full bg-gradient-to-r from-[#ffb845] to-[#ff8c00]"
+                    :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'"
+                    class="transition-all duration-700 ease-out delay-200"></div>
+                <p class="mt-6 text-gray-300 text-base md:text-lg leading-relaxed transition-all duration-700 delay-300"
+                    :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'">
+                    {!! $subtitle !!}
+                </p>
+            </div>
 
-        <!-- Title -->
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 transition-all duration-1000 transform"
-            :class="shown ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'">
-            {{ $title }}
-        </h2>
-
-        <!-- Subtitle -->
-        <p class="text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed transition-all duration-1000 delay-200 transform"
-           :class="shown ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'">
-            {!! nl2br(e($subtitle)) !!}
-        </p>
+            <!-- Col droite : Points -->
+            <ul class="space-y-4 md:space-y-5">
+                @foreach ($points as $i => $p)
+                    <li class="relative group transition-all duration-700 ease-out"
+                        style="transition-delay: {{ $i * 150 }}ms"
+                        :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'">
+                        <div
+                            class="rounded-2xl bg-black/40 backdrop-blur-sm border border-white/10 px-4 py-3 flex items-center gap-3 hover:border-[#ff8c00]/40 transition">
+                            <span
+                                class="grid place-items-center w-6 h-6 rounded-xl
+                                         bg-gradient-to-br from-[#ffb845] to-[#ff8c00] text-black font-bold">✓</span>
+                            <span class="text-gray-200">{{ $p }}</span>
+                        </div>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
 
         <!-- CTA -->
-        <a href="#"
-           class="relative inline-block px-8 py-3 mb-16 text-white font-semibold rounded-full
-                  bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg
-                  overflow-hidden transition-transform duration-500 hover:scale-110 group
-                  animate-glow-pulse"
-           :class="shown ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-6 scale-95'">
-            <span class="relative z-10">{{ $cta }}</span>
-            <!-- Shine effect -->
-            <span class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
-        </a>
+        <div class="mt-10 text-center transition-all duration-700 delay-400"
+            :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+            <a href="{{ $cta['href'] ?? '#' }}"
+                class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold
+                      bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black shadow-lg shadow-orange-500/25
+                      hover:shadow-orange-500/50 hover:scale-105 active:scale-100 transition-transform">
+                {{ $cta['text'] ?? 'Découvrir' }}
+            </a>
+        </div>
 
-        <!-- Items -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            @foreach ($items as $index => $item)
-                <div class="relative group p-8 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg
-                            transition-all duration-700 transform overflow-hidden"
-                     :class="shown ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'"
-                     style="transition-delay: {{ $index * 200 }}ms">
+        <!-- Cartes -->
+        <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            @foreach ($items as $i => $item)
+                <article
+                    class="relative group rounded-3xl p-[1px] bg-gradient-to-br from-white/10 to-white/5 transition-all duration-700 ease-out"
+                    style="transition-delay: {{ $i * 150 }}ms"
+                    :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-30'">
+                    <div
+                        class="rounded-3xl h-full bg-[#0e1219]/80 border border-white/10 px-6 py-7 flex flex-col group-hover:border-[#ff8c00]/40 transition">
+                        <!-- Icone + Titre -->
+                        <div class="flex items-center gap-3">
+                            <!-- Icone -->
+                            <div
+                                class="relative w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full
+            bg-gradient-to-r from-orange-400 to-pink-500 shadow-lg
+            transform transition duration-500 group-hover:scale-125 group-hover:rotate-6 group-hover:-translate-y-1">
+                                {!! safe_svg($item['icon'] ?? 'help-circle', 'w-8 h-8') !!}
+                            </div>
 
-                    <!-- Aura -->
-                    <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500"></div>
 
-                    <!-- Icon -->
-                    <div class="relative w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full
-                                bg-gradient-to-r from-indigo-500 to-purple-600 shadow-lg
-                                transform transition duration-500 group-hover:scale-125 group-hover:rotate-6 group-hover:-translate-y-1">
-                        <img src="{{ Storage::disk('public')->url($item['icon']) }}" alt="{{ $item['title'] }}" class="w-8 h-8" />
+                            <h3
+                                class="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]">
+                                {{ $item['title'] }}
+                            </h3>
+                        </div>
+                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">{{ $item['description'] }}</p>
                     </div>
-
-                    <!-- Title -->
-                    <h3 class="relative text-xl font-semibold mb-3 transition group-hover:text-purple-300">
-                        {{ $item['title'] }}
-                    </h3>
-
-                    <!-- Description -->
-                    <p class="relative text-gray-300 text-sm leading-relaxed">
-                        {{ $item['description'] }}
-                    </p>
-                </div>
+                </article>
             @endforeach
         </div>
 
-        <!-- CTA bottom -->
-        <div class="mt-16 transition-all duration-1000 delay-500 transform"
-             :class="shown ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-95'">
-            <a href="#"
-               class="inline-block px-8 py-3 text-white font-semibold rounded-full
-                      bg-gradient-to-r from-purple-600 to-indigo-500 shadow-lg
-                      hover:scale-110 transition-transform duration-500 animate-glow-pulse">
-                {{ $cta }}
+        <!-- CTA bas -->
+        <div class="mt-10 text-center">
+            <a href="{{ $cta['href'] ?? '#' }}"
+                class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold
+                      bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black shadow-lg shadow-orange-500/25
+                      hover:shadow-orange-500/50 hover:scale-105 active:scale-100 transition-transform">
+                {{ $cta['text'] ?? 'Notre Accompagnement' }}
             </a>
         </div>
     </div>
 </section>
-
-<!-- Effets supplémentaires -->
-<style>
-@keyframes glowPulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.4), 0 0 40px rgba(236, 72, 153, 0.3); }
-  50% { box-shadow: 0 0 30px rgba(236, 72, 153, 0.6), 0 0 60px rgba(139, 92, 246, 0.5); }
-}
-.animate-glow-pulse {
-  animation: glowPulse 3s infinite alternate;
-}
-</style>

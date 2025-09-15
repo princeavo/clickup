@@ -1,97 +1,94 @@
 @props([
-    'title' => 'Témoignages',
+    'title_colored' => 'nos clients',
+    'title_white' => 'qui en parlent le mieux',
     'subtitle' => null,
     'testimonials' => [],
-    'cta' => ['text' => 'Voir plus', 'href' => '#'],
+    'cta' => ['text' => 'Découvrir leurs transformations', 'href' => '#'],
 ])
 
-<section x-data="testimonialCarousel({ autoplay: true, interval: 6000 })" x-init="init()" @keydown.right.prevent="next()" @keydown.left.prevent="prev()"
+<section x-data="testimonialCarousel({{ count($testimonials) }})" x-init="init()" @keydown.right.prevent="next()" @keydown.left.prevent="prev()"
     role="region" aria-label="Témoignages de clients" tabindex="0"
-    class="relative w-full py-20 text-white overflow-hidden bg-gradient-to-b from-[#0a0f1c] via-[#0b0f1a] to-[#120a1a]">
-    <!-- Décor lumineux -->
-    <div class="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-purple-700/25 blur-3xl"></div>
+    class="relative w-full py-20 text-white overflow-hidden bg-cover bg-center"
+    style="background-image: url('{{ asset('testimonials-bg.png') }}');">
+    <!-- Overlay sombre -->
+    <div class="absolute inset-0 bg-black/80"></div>
+
+    <!-- Décors lumineux -->
+    <div class="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-orange-500/20 blur-3xl"></div>
     <div
-        class="pointer-events-none absolute bottom-0 right-0 w-[550px] h-[550px] rounded-full bg-indigo-600/20 blur-3xl">
+        class="pointer-events-none absolute bottom-0 right-0 w-[550px] h-[550px] rounded-full bg-orange-600/20 blur-3xl">
     </div>
 
+
     <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+
         <!-- Header -->
         <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div class="text-center lg:text-left max-w-3xl mx-auto lg:mx-0">
-                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight opacity-0 translate-y-6 transition-all duration-700 ease-out"
-                    x-intersect.once="$el.classList.remove('opacity-0','translate-y-6')">
-                    {{ $title }}
+                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                    x-intersect:enter="$el.classList.remove('opacity-0','translate-y-10'); $el.classList.add('opacity-100','translate-y-0')"
+                    x-intersect:leave="$el.classList.remove('opacity-100','translate-y-0'); $el.classList.add('opacity-0','-translate-y-10')">
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00] font-extrabold">
+                        Ce sont {{ $title_colored }}
+                    </span>
+                    <span class="block md:inline text-white"> {{ $title_white }} </span>
                 </h2>
+
+
+                <div class="w-20 h-1 bg-gradient-to-r from-[#ffb845] to-[#ff8c00] mr-auto mt-4 opacity-0 scale-x-50 transition-all duration-700 ease-out origin-left"
+                    x-intersect:enter="$el.classList.replace('opacity-0','opacity-100'); $el.classList.replace('scale-x-50','scale-x-100')">
+                </div>
+
                 @if ($subtitle)
-                    <p class="mt-4 text-gray-400 text-lg opacity-0 translate-y-6 transition-all duration-700 ease-out delay-200"
-                        x-intersect.once="$el.classList.remove('opacity-0','translate-y-6')">
+                    <p class="mt-4 text-gray-400 text-lg opacity-0 translate-y-10 transition-all duration-700 ease-out delay-200"
+                        x-intersect:enter="$el.classList.replace('opacity-0','opacity-100'); $el.classList.replace('translate-y-10','translate-y-0')">
                         {{ $subtitle }}
                     </p>
                 @endif
             </div>
 
-            <div class="text-center lg:text-right">
-                <a href="{{ $cta['href'] ?? '#' }}"
-                    class="inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-semibold
-                          bg-white/10 border border-white/15 backdrop-blur-md
-                          hover:bg-white/15 hover:shadow-lg hover:shadow-purple-500/20
-                          transition-all duration-300"
-                    aria-label="{{ $cta['text'] ?? 'Voir plus' }}">
+            <!-- CTA -->
+            <div class="text-center lg:text-right opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300"
+                x-intersect:enter="$el.classList.replace('opacity-0','opacity-100'); $el.classList.replace('translate-y-10','translate-y-0')">
+                <x-button :href="$cta['href'] ?? '#'" variant="outline" class="px-5 py-2.5">
                     {{ $cta['text'] ?? 'Voir plus' }}
-                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
+                    <svg class="w-4 h-4 inline-block ml-2" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
-                </a>
+                </x-button>
             </div>
         </div>
 
         <!-- Carousel -->
         <div class="relative mt-12">
-            <!-- Track -->
+            <!-- Scroller -->
             <div x-ref="scroller"
-                class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory p-2
-                       [-ms-overflow-style:none] [scrollbar-width:none]"
-                style="-webkit-overflow-scrolling:touch;overflow-y: hidden;" @mouseenter="pause()" @mouseleave="play()">
+                class="flex gap-6 py-12 overflow-x-auto scroll-smooth snap-x snap-mandatory no-scrollbar"
+                style="-webkit-overflow-scrolling:touch; overflow-y:hidden;">
                 @foreach ($testimonials as $i => $t)
-                    <article x-data="{ glowX: 50, glowY: 50, showGlow: false }"
-                        @mousemove="glowX = $event.offsetX; glowY = $event.offsetY; showGlow = true"
-                        @mouseleave="showGlow = false" data-slide="{{ $i }}"
-                        class="relative snap-start md:snap-center shrink-0
-                               basis-[85%] sm:basis-[70%] md:basis-[48%] lg:basis-[32%]
-                               bg-white/8 border border-white/10 backdrop-blur-md
-                               rounded-3xl p-7 md:p-8 text-left text-white
-                               shadow-[0_20px_80px_-30px_rgba(124,58,237,0.25)]
-                               transition-all duration-500 group
-                               hover:-translate-y-1 hover:shadow-purple-500/30
-                               opacity-0 translate-y-6 flex flex-col justify-between
-                               overflow-hidden"
-                        x-intersect.once="$el.classList.remove('opacity-0','translate-y-6')" role="group"
-                        aria-roledescription="slide"
-                        aria-label="Témoignage {{ $i + 1 }} sur {{ count($testimonials) }}">
-                        <!-- Glow dynamique -->
-                        <div class="absolute inset-0 pointer-events-none transition-opacity duration-300"
-                            :style="showGlow
-                                ?
-                                `background: radial-gradient(circle at ${glowX}px ${glowY}px,
-                                                                                                  rgba(139,92,246,0.25), transparent 60%); opacity:1;` :
-                                'opacity:0;'">
-                        </div>
+                    <article data-slide="{{ $i }}"
+                        class="relative snap-start shrink-0
+           w-[88%] sm:w-[70%] md:w-[48%] lg:w-[32%]
+           bg-white/5 border border-white/10 backdrop-blur-md
+           rounded-3xl p-7 md:p-8 text-left text-white
+           shadow-[0_20px_80px_-30px_rgba(255,140,0,0.18)]
+           transition-all duration-500 group hover:-translate-y-1 hover:shadow-orange-500/40 hover:scale-[1.02]
+           flex flex-col min-h-[360px]
+           opacity-0 translate-y-10"
+                        x-intersect:enter="$el.classList.remove('opacity-0','translate-y-10'); $el.classList.add('opacity-100','translate-y-0')"
+                        x-intersect:leave="$el.classList.remove('opacity-100','translate-y-0'); $el.classList.add('opacity-0','-translate-y-10')">
 
-                        <!-- Icône -->
-                        <svg class="w-8 h-8 text-white/30 mb-4 relative z-10" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M7.17 6A5.17 5.17 0 0 0 2 11.17V22h8v-9H6.83A2.83 2.83 0 0 1 4 10.17 3.17 3.17 0 0 1 7.17 7h.66V6h-0.66Zm9 0A5.17 5.17 0 0 0 11 11.17V22h8v-9h-3.17A2.83 2.83 0 0 1 13 10.17 3.17 3.17 0 0 1 16.17 7h.66V6h-0.66Z" />
-                        </svg>
 
-                        <!-- Citation -->
-                        <p class="text-base md:text-lg leading-relaxed text-gray-100/95 flex-1 relative z-10">
+                        <!-- Quote -->
+                        <p class="text-base md:text-lg leading-relaxed text-gray-100/95">
                             {{ $t['quote'] }}
                         </p>
 
-                        <!-- Footer -->
-                        <div class="mt-8 flex items-center justify-between relative z-10 flex-wrap">
-                            <div class="flex items-center gap-3">
+                        <!-- Footer aligné en bas -->
+                        <div class="mt-auto pt-6 flex items-center justify-between flex-wrap gap-4">
+                            <div class="flex items-center gap-3 min-w-0">
                                 @php
                                     $initials = collect(explode(' ', $t['name'] ?? ''))
                                         ->map(fn($p) => mb_substr($p, 0, 1))
@@ -101,21 +98,21 @@
 
                                 @if (!empty($t['avatar']))
                                     <img src="{{ $t['avatar'] }}" alt="{{ $t['name'] }}"
-                                        class="w-10 h-10 rounded-full object-cover ring-2 ring-white/10">
+                                        class="w-10 h-10 rounded-full object-cover ring-2 ring-orange-500/30 flex-shrink-0">
                                 @else
                                     <div
-                                        class="w-10 h-10 rounded-full grid place-items-center bg-gradient-to-br from-indigo-500 to-purple-600 text-white/90 font-bold">
+                                        class="w-10 h-10 rounded-full grid place-items-center bg-gradient-to-br from-[#ffb845] to-[#ff8c00] text-white font-bold flex-shrink-0">
                                         {{ $initials }}
                                     </div>
                                 @endif
 
-                                <div>
-                                    <div class="font-semibold">{{ $t['name'] }}</div>
-                                    <div class="text-sm text-gray-400">{{ $t['role'] }}</div>
+                                <div class="min-w-0">
+                                    <div class="font-semibold truncate">{{ $t['name'] }}</div>
+                                    <div class="text-sm text-gray-400 truncate">{{ $t['role'] ?? '' }}</div>
                                 </div>
                             </div>
 
-                            <div class="flex items-center gap-0.5 text-amber-400 drop-shadow">
+                            <div class="flex items-center gap-0.5 text-orange-400 drop-shadow">
                                 @for ($j = 1; $j <= 5; $j++)
                                     <svg class="w-5 h-5 {{ $j <= ($t['rating'] ?? 5) ? 'opacity-100' : 'opacity-30' }}"
                                         viewBox="0 0 20 20" fill="currentColor">
@@ -131,21 +128,16 @@
 
             <!-- Controls -->
             <div class="mt-6 flex items-center justify-center gap-3">
-                <button @click="prev()"
-                    class="w-10 h-10 rounded-full grid place-items-center
-                                   bg-white/10 border border-white/15 backdrop-blur-md
-                                   hover:bg-white/20 transition"
-                    aria-label="Précédent">
+                <button @click="prev()" aria-label="Précédent"
+                    class="w-10 h-10 rounded-full grid place-items-center bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-white shadow-lg hover:scale-110 transition">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
                         <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
                     </svg>
                 </button>
-                <button @click="next()"
-                    class="w-10 h-10 rounded-full grid place-items-center
-                                   bg-white/10 border border-white/15 backdrop-blur-md
-                                   hover:bg-white/20 transition"
-                    aria-label="Suivant">
+
+                <button @click="next()" aria-label="Suivant"
+                    class="w-10 h-10 rounded-full grid place-items-center bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-white shadow-lg hover:scale-110 transition">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
                         <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -155,58 +147,46 @@
 
             <!-- Dots -->
             <div class="mt-6 flex justify-center gap-2">
-                <template x-for="(t, i) in {{ count($testimonials) }}" :key="i">
-                    <button @click="goTo(i)" class="w-3 h-3 rounded-full transition"
-                        :class="activeIndex === i ? 'bg-purple-500 scale-110' : 'bg-white/20 hover:bg-white/40'">
+                <template x-for="i in total" :key="i">
+                    <button @click="goTo(i-1)" class="w-3 h-3 rounded-full transition"
+                        :class="activeIndex === (i - 1) ? 'bg-gradient-to-r from-[#ffb845] to-[#ff8c00] scale-110' :
+                            'bg-white/20 hover:bg-white/40'">
                     </button>
                 </template>
             </div>
         </div>
     </div>
 
-    <!-- Alpine logic -->
     <script>
-        function testimonialCarousel({
-            autoplay = true,
-            interval = 1000
-        } = {}) {
+        function testimonialCarousel() {
             return {
-                timer: null,
                 activeIndex: 0,
+                total: 0,
+                scroller: null,
+
                 init() {
-                    if (autoplay) this.play();
+                    this.scroller = this.$refs.scroller;
+                    this.total = this.scroller.children.length;
                 },
+
+                goTo(index) {
+                    this.activeIndex = (index + this.total) % this.total;
+                    const card = this.scroller.children[this.activeIndex];
+                    card.scrollIntoView({
+                        inline: "center",
+                        behavior: "smooth",
+                        block: "nearest"
+                    });
+                },
+
                 next() {
-                    this.activeIndex = (this.activeIndex + 1) % {{ count($testimonials) }};
-                    this.scrollToActive();
+                    this.goTo(this.activeIndex + 1);
                 },
+
                 prev() {
-                    this.activeIndex = (this.activeIndex - 1 + {{ count($testimonials) }}) % {{ count($testimonials) }};
-                    this.scrollToActive();
+                    this.goTo(this.activeIndex - 1);
                 },
-                goTo(i) {
-                    this.activeIndex = i;
-                    this.scrollToActive();
-                },
-                scrollToActive() {
-                    const s = this.$refs.scroller;
-                    const el = s.querySelector(`[data-slide='${this.activeIndex}']`);
-                    if (el) {
-                        const left = el.offsetLeft - (s.clientWidth - el.clientWidth) / 2;
-                        s.scrollTo({
-                            left,
-                            behavior: 'smooth'
-                        });
-                    }
-                },
-                play() {
-                    this.pause();
-                    this.timer = setInterval(() => this.next(), interval);
-                },
-                pause() {
-                    if (this.timer) clearInterval(this.timer);
-                }
-            }
+            };
         }
     </script>
 </section>

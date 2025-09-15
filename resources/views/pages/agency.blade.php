@@ -15,6 +15,8 @@
 
     <x-section-mission :title="$missionSection['title']" :subtitle="$missionSection['subtitle']" :values="$missionSection['values']" />
 
+    <x-stats-section />
+
     <x-testimonials-carousel title="Ce que nos clients disent de nous"
         subtitle="Ce sont nos clients qui en parlent le mieux." />
 

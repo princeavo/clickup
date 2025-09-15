@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         // Injecte le footer dans le layout principal
         View::composer('layouts.app', function ($view) {
             $footer = [
-                'logo' => 'https://thewemark.com/wp-content/uploads/2024/03/metaadsmonthly-services.png',
+                'logo' => asset('logo-footer.png'),
                 'about' => "ClickUp est l’agence spécialisée Facebook & TikTok Ads qui transforme ton budget pub en ventes prévisibles.",
                 'links' => [
                     [
@@ -64,67 +64,84 @@ class AppServiceProvider extends ServiceProvider
         // Injecte les marques dans le carrousel
         View::composer('components.brand-carousel', function ($view) {
             $brands = [
-                ['name' => 'Decoho', 'logo' => 'brands/decoho.png'],
-                ['name' => 'Merry Square', 'logo' => 'brands/merry-square.png'],
-                ['name' => 'Polar', 'logo' => 'brands/polar.png'],
-                ['name' => 'Bloomup', 'logo' => 'brands/bloomup.png'],
-                ['name' => 'Thorvald', 'logo' => 'brands/thorvald.png'],
-                ['name' => 'Decoho', 'logo' => 'brands/decoho.png'],
-                ['name' => 'Merry Square', 'logo' => 'brands/merry-square.png'],
-                ['name' => 'Polar', 'logo' => 'brands/polar.png'],
-                ['name' => 'Bloomup', 'logo' => 'brands/bloomup.png'],
-                ['name' => 'Thorvald', 'logo' => 'brands/thorvald.png'],
+                ['name' => 'Nom1', 'logo' => 'brands/logo_01.png'],
+                ['name' => 'Nom2', 'logo' => 'brands/logo_02.png'],
+                ['name' => 'Nom3', 'logo' => 'brands/logo_03.png'],
+                ['name' => 'Nom4', 'logo' => 'brands/logo_04.png'],
+                ['name' => 'Nom5', 'logo' => 'brands/logo_05.png'],
             ];
             $view->with('brands', $brands);
+            $view->with('title', 'Plus de <span class="text-orange-400 font-bold">80 marques accompagnées</span>');
+            $view->with('speed', 100);
+            $view->with('fade', true);
+            $view->with('pauseOnHover', true);
+            $view->with('threshold', 10);
         });
 
         // Injecte les ebooks
         View::composer('components.ebook-carousel', function ($view) {
             $ebooks = [
                 [
-                    'title' => 'Stratégies Facebook Ads',
-                    'image' => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6852dcaa710ffb3af6ea27c7_ebook3v2.png',
+                    'title' => 'Facebook Ads Mastery',
+                    'subtitle' => 'Le GUIDE pratique pour maîtriser la publicité Facebook de A à Z',
+                    'image' => 'https://img.freepik.com/vecteurs-premium/telechargez-livre-e-book-marketing-content-marketing-ebook-telecharger-ordinateur-portable-illustration_100456-611.jpg?semt=ais_hybrid&w=740&q=80',
                     'link'  => '#',
+                    'cta'   => 'Obtenir',
                 ],
                 [
-                    'title' => 'Secrets TikTok Ads',
-                    'image' => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684454c1e5705b03b0dc96bc_75a5c1cb9eeeedcb391e9da5ad33660f_Frame%2080.webp',
+                    'title' => 'Vendre sans Efforts',
+                    'subtitle' => 'Apprends à créer un système automatisé qui vend pendant ton sommeil',
+                    'image' => 'https://www.investintech.com/resources/blog/wp-content/uploads/2013/07/PDF-eBook-reading.jpg',
                     'link'  => '#',
+                    'cta'   => 'Obtenir',
                 ],
                 [
-                    'title' => 'Guide Retargeting',
-                    'image' => 'https://www.dunod.com/sites/default/files/thumbnails/image/9782100563081-T.jpg',
+                    'title' => 'Zéro à Millions',
+                    'subtitle' => 'Attire des prospects et transforme-les en clients grâce à Facebook Ads',
+                    'image' => 'https://www.thebookedition.com/img/cms/CMS/publier-ebook.jpg',
                     'link'  => '#',
+                    'cta'   => 'Obtenir',
                 ],
                 [
-                    'title' => 'Scaling Ads',
-                    'image' => 'https://www.dunod.com/sites/default/files/thumbnails/image/9782100563081-T.jpg',
+                    'title' => 'Facebook Ads Mastery',
+                    'subtitle' => 'Le GUIDE pratique pour maîtriser la publicité Facebook de A à Z',
+                    'image' => 'https://www.redacteur.com/blog/wp-content/uploads/sites/6/2021/11/ebook.jpg',
                     'link'  => '#',
+                    'cta'   => 'Obtenir',
+                ],
+                // /images/ebooks/vendre-sans-efforts.png
+                [
+                    'title' => 'Vendre sans Efforts',
+                    'subtitle' => 'Apprends à créer un système automatisé qui vend pendant ton sommeil',
+                    'image' => 'https://www.aproposdecriture.com/wp-content/uploads/2016/06/free-ebook.jpg',
+                    'link'  => '#',
+                    'cta'   => 'Obtenir',
                 ],
                 [
-                    'title' => 'Stratégies Facebook Ads',
-                    'image' => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6852dcaa710ffb3af6ea27c7_ebook3v2.png',
+                    'title' => 'Zéro à Millions',
+                    'subtitle' => 'Attire des prospects et transforme-les en clients grâce à Facebook Ads',
+                    'image' => 'https://www.thebookedition.com/img/cms/CMS/publier-ebook.jpg',
                     'link'  => '#',
-                ],
-                [
-                    'title' => 'Secrets TikTok Ads',
-                    'image' => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684454c1e5705b03b0dc96bc_75a5c1cb9eeeedcb391e9da5ad33660f_Frame%2080.webp',
-                    'link'  => '#',
-                ],
-                [
-                    'title' => 'Guide Retargeting',
-                    'image' => 'https://www.dunod.com/sites/default/files/thumbnails/image/9782100563081-T.jpg',
-                    'link'  => '#',
+                    'cta'   => 'Obtenir',
                 ],
             ];
-            $view->with('ebooks', $ebooks);
+
+            $section = [
+                'title_colored' => 'Ton guide gratuit',
+                'title_white' => 'pour lancer des pubs rentables dès aujourd’hui',
+                'description' => 'On t’offre un e-book qui révèle nos meilleures stratégies Facebook & TikTok Ads. Tu peux l’appliquer dès demain, sans engagement.',
+                'cta_all' => 'Voir tous les ebooks',
+            ];
+
+            $view->with(compact('ebooks', 'section'));
         });
+
 
         View::composer('components.stats-section', function ($view) {
             $stats = [
                 [
                     'value' => 100,
-                    'suffix' => '+',
+                    'suffix' => '',
                     'label' => 'Clients accompagnés',
                 ],
                 [
@@ -153,7 +170,7 @@ class AppServiceProvider extends ServiceProvider
                     'name'  => 'Elise Roux',
                     'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                     'rating' => 5,
-                    'avatar' => 'https://www.journaldugeek.com/app/uploads/2025/02/avatar-dernier-maitre-de-lair-suite.jpg',     // optionnel
+                    'avatar' => 'https://www.journaldugeek.com/app/uploads/2025/02/avatar-dernier-maitre-de-lair-suite.jpg',
                 ],
                 [
                     'quote' => "Grâce à l’équipe, nous avons réduit nos coûts tout en augmentant les ventes. Un partenaire fiable et impliqué.",
@@ -176,12 +193,13 @@ class AppServiceProvider extends ServiceProvider
                     'rating' => 5,
                     'avatar' => null,
                 ],
+                // doublons pour le carousel
                 [
                     'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                     'name'  => 'Elise Roux',
                     'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                     'rating' => 5,
-                    'avatar' => 'https://www.journaldugeek.com/app/uploads/2025/02/avatar-dernier-maitre-de-lair-suite.jpg',     // optionnel
+                    'avatar' => 'https://www.journaldugeek.com/app/uploads/2025/02/avatar-dernier-maitre-de-lair-suite.jpg',
                 ],
                 [
                     'quote' => "Grâce à l’équipe, nous avons réduit nos coûts tout en augmentant les ventes. Un partenaire fiable et impliqué.",
@@ -206,13 +224,21 @@ class AppServiceProvider extends ServiceProvider
                 ],
             ];
 
-            $testimonialsCta =  [
-                'text' => 'Découvrir leurs transformations',
-                'href' => '#' ?? '#',
+            $testimonialsSection = [
+                'title' => 'Ils nous font confiance',
+                'subtitle' => 'Découvrez ce que nos clients disent de nous',
             ];
+
+            $testimonialsCta = [
+                'text' => 'Découvrir leurs transformations',
+                'href' => '#',
+            ];
+
             $view->with('testimonials', $testimonials);
+            $view->with('testimonialsSection', $testimonialsSection);
             $view->with('testimonialsCta', $testimonialsCta);
         });
+
 
 
         View::composer('components.section-call', function ($view) {

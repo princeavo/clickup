@@ -2,31 +2,30 @@
 
 @section('title', 'Accueil - ClickUp')
 
+@section('hero')
+    <x-hero titlePart1="On transforme" titlePart2="ton budget pub" titlePart3="en" titlePart4="ventes prévisibles"
+        subtitle=" <strong class='text-orange-400'>ClickUp</strong>, l’agence spécialisée Facebook & TikTok Ads qui aide les marques e-commerce (15–50k€/mois) à scaler x2/x3 et stabiliser leurs ventes en 61 jours grâce à la <span class='text-orange-400'>méthode CREA™</span>."
+        cta="Réserve ton Audit Gratuit" ctaLink="#contact" background="banner-home.jpg" />
+
+@endsection
+
 @section('content')
     <main class="pt-16">
-        <!-- Hero Section -->
-        <x-hero :title="$hero['title']" :subtitle="$hero['subtitle']" :cta="$hero['cta']" :background="$hero['background']" />
 
         <!-- Carousel Logos -->
         <x-brand-carousel />
 
-        <x-section-usp id="usp-dashboard" title="Un Dashboard Amazon précis pour nos clients"
-            subtitle="Des données actionnables, présentées clairement pour décider plus vite." :image="'hero.png'"
-            :cfg="[
-                'rotateZ' => 7,
-                'rotateX' => -12,
-                'translateY' => 64,
-                'scaleFrom' => 0.99,
-                'scaleTo' => 1.05,
-                'startProgress' => 0.22,
-                'glossWidth' => 130,
-                'stagger' => 60,
-            ]" />
+        <x-prospect-section :title="$prospect['title']" :subtitle="$prospect['subtitle']" />
 
-        <x-crea-method :title="'<span class=&quot;text-white&quot;>La méthode</span> <span class=&quot;text-purple-400&quot;>CREA™</span> : <br> <span class=&quot;text-gray-200&quot;>Des publicités qui frappent, déclenchent l’émotion, et transforment</span> <span class=&quot;text-indigo-400&quot;>l’intérêt en résultats</span>. ?>'"'" cta="Découvrir la méthode CREA™"
-            background="linear-gradient(135deg, #0a0a0a, #1a1a1a)" backgroundImage="fence.png" />
 
-        <x-resources-section :resources="$resources" />
+        <x-crea-section :title="$crea['title']" :subtitle="$crea['subtitle']" :image="$crea['image']" :cta="$crea['cta']" :ctaUrl="$crea['ctaUrl']"
+            ctaVariant="neon" />
+
+
+        <x-resources-section
+            title="Pourquoi <span class='text-[#ffb845]'>Facebook & TikTok</span> sont deux leviers de croissance puissants en 2025"
+            subtitle="Tes clients y passent des heures chaque jour. Ces plateformes connaissent leurs envies mieux qu’eux-mêmes. Avec la bonne stratégie, tu peux transformer ce temps d’écran en temps de caisse."
+            cta="Nos ressources" :resources="$resources" />
 
         <x-accompagnement-section :title="$accompagnement['title']" :subtitle="$accompagnement['subtitle']" :cta="$accompagnement['cta']" :items="$accompagnement['items']" />
 

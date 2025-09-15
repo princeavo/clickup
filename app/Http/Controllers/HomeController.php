@@ -24,51 +24,41 @@ class HomeController extends Controller
         $resources = [
             [
                 'title' => 'Facebook',
-                'description' => 'La plateforme qui connaît les besoins de tes clients mieux que leur entourage.',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQlQgBYHc-oK1CtI_SeIkYNHT0UWkIaPLQCQ&s'
+                'description' => 'La plateforme qui connaît les <strong>besoins de tes clients</strong> mieux que leur entourage.',
+                'image' => asset('storage/resources/facebook.png'),
             ],
             [
                 'title' => 'TikTok',
-                'description' => 'L’eldorado de l’attention où les achats impulsifs deviennent tes meilleures ventes.',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSNWVgeMhKZ-8ZpgVD5Zz6PdTaZdUQ_Fli9Q&s'
+                'description' => 'L’eldorado de <strong>l’attention</strong> où les achats impulsifs deviennent tes meilleures ventes.',
+                'image' => asset('storage/resources/tiktok.png'),
             ],
             [
-                'title' => 'Stats',
-                'description' => '98% de tes clients passent 5 à 6 heures par jour sur Facebook & TikTok. Tu peux vendre à tout moment.',
-                'image' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4NZKgIMNlODPkl-SPAFjgCpSCIjIvciMwlw&s'
+                'title' => 'Les Stats',
+                'description' => '98% de tes clients passent <strong>5 à 6h/jour</strong> sur FB & TikTok. Tu peux vendre à tout moment.',
+                'image' => asset('storage/resources/stats.png'),
             ],
         ];
 
+
+
         $accompagnement = [
-            'title' => "Arrête de perdre de l’argent avec des pubs qui ne vendent pas.",
-            'subtitle' => "Chez ClickUp : pas de jolies pubs, des machines à vendre. Facebook & TikTok qui rapportent :
-        ✓ Tu te concentres sur ton business
-        ✓ Chaque euro investi rapporte
-        ✓ On gère, tu encaisses",
-            'cta' => "Notre accompagnement",
+            'title' => "Arrête de perdre de l’argent <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]'>avec des pubs qui ne vendent pas</span>",
+            'subtitle' => "Chez ClicUp : pas de jolies pubs, des machines à vendre Facebook & TikTok qui rapportent",
+            'points' => [
+                "Tu te concentres sur ton business",
+                "Chaque € investi rapporte",
+                "On gère, tu encaisses",
+            ],
+            'cta' => ['text' => 'Notre Accompagnement', 'href' => '#'],
             'items' => [
-                [
-                    'title' => 'Rentabilité',
-                    'description' => "Chaque euro investi doit rapporter. Sinon, ce n’est pas de la pub, c’est une perte.",
-                    'icon' => 'accompagnements/profit.png',
-                ],
-                [
-                    'title' => 'Expertise',
-                    'description' => "350+ campagnes lancées, des millions gérés, un savoir-faire éprouvé.",
-                    'icon' => 'accompagnements/expertise.png',
-                ],
-                [
-                    'title' => 'Suivi dédié',
-                    'description' => "Un account manager qui connaît ton business (pas un stagiaire).",
-                    'icon' => 'accompagnements/manager.png',
-                ],
-                [
-                    'title' => 'Tranquillité',
-                    'description' => "On gère, tu dors. Tes pubs tournent et tes ventes tombent.",
-                    'icon' => 'accompagnements/peace.png',
-                ],
+                ['title' => 'Rentabilité', 'description' => "Chaque € investi doit rapporter. Sinon, ce n’est pas de la pub, c’est une perte.", 'icon' => 'dollar-sign'],
+                ['title' => 'Expertise', 'description' => "350+ campagnes lancées, des millions générés, un savoir-faire éprouvé.", 'icon' => 'award'],
+                ['title' => 'Suivi dédié', 'description' => "Un account manager qui connaît ton business (pas un stagiaire multi-tâches).", 'icon' => 'user-check'],
+                ['title' => 'Tranquillité', 'description' => "On gère, tu dors. Tes pubs tournent et tes ventes tombent.", 'icon' => 'moon'],
             ]
         ];
+
+
 
         $services = [
             [
@@ -258,6 +248,25 @@ class HomeController extends Controller
             ],
         ];
 
+        $crea = [
+            'title' => 'La méthode CREA™',
+            'subtitle' => "Des publicités qui <span class='font-semibold'>captent l’attention</span>, déclenchent l’émotion et transforment l’intérêt en <span class='font-semibold'>chiffre d’affaires</span>.",
+            'cta' => 'Découvrir la méthode CREA™',
+            'ctaUrl' => '/methode-crea',
+            'image' => 'https://www.creageneve.com/wp-content/uploads/2022/10/crea_homepage.jpg',
+        ];
+
+        $prospect = [
+            'title' => "<span class='text-orange-400 italic'>Ton prospect scrolle ?</span>",
+            'subtitle' => "Nous faisons en sorte qu’il s’arrête, qu’il clique et qu’il achète",
+            'steps' => [
+                "Ta pub apparaît dans son feed",
+                "Il clique sur ta pub",
+                "Il va sur ton site et achète",
+            ],
+        ];
+
+
         return view('pages.home', [
             'brands' => $brands,
             'hero' => [
@@ -276,6 +285,8 @@ class HomeController extends Controller
                 'href' => '#' ?? '#',
             ],
             'ebooks' => $ebooks,
+            'crea' => $crea,
+            'prospect' => $prospect
         ]);
     }
 }
