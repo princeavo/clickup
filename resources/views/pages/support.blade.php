@@ -2,9 +2,13 @@
 
 @section('title', 'Accompagnement')
 
+@section('hero')
+    <x-section-hero :title="$section['title']" :subtitle="$section['subtitle']" :button-text="$section['button_text']" :button-link="$section['button_link']" :image="$section['image']" />
+
+@endsection
+
 @section('content')
-    <section class="w-full text-center">
-        <x-section-hero :title="$section['title']" :subtitle="$section['subtitle']" :button-text="$section['button_text']" :button-link="$section['button_link']" :image="$section['image']" />
+    <main class="pt-16">
         <!-- Carousel Logos -->
         <x-brand-carousel speed="70" :fade="true" :pauseOnHover="false" gapClass="gap-10 sm:gap-14" />
         <!-- Section Pourquoi travailler avec nous -->
@@ -22,5 +26,5 @@
         <!-- Section Ebook -->
         <x-ebook-carousel />
         <x-whatsapp-button />
-    </section>
-@endsection
+        </section>
+    @endsection

@@ -126,8 +126,8 @@ class SupportController extends Controller
                 'title' => "L’accompagnement qui transforme ton budget pub en une machine à cash.",
                 'subtitle' => "Avec notre méthode CREA™, on t’aide à installer un système publicitaire rentable et prévisible sur Facebook & TikTok. Ton business, notre obsession.",
                 'button_text' => "Réserve ton appel découverte",
-                'button_link' => url('contact'), // ou route vers Calendly par ex
-                'image' => Storage::disk('public')->url('accompagnements/hero.png'), // image que tu fournirais
+                'button_link' => url('contact'),
+                'image' => Storage::disk('public')->url('accompagnements/hero.png')
             ],
             'whyUs' => [
                 'title' => "Pourquoi travailler avec nous ?",

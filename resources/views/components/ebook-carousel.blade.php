@@ -4,7 +4,13 @@
 ])
 
 <section x-data="ebookCarousel({{ count($ebooks) }})" x-init="init()"
-    class="relative bg-black py-20 px-6 lg:px-20 overflow-hidden text-white">
+    class="relative bg-black py-20 px-6 lg:px-20 overflow-hidden text-white bg-cover bg-center bg-no-repeat"
+    style="
+    background-image: url('{{ asset('images/ebooks-bg.png') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0b1520;">
 
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-12">
@@ -15,15 +21,9 @@
             <span class="text-[#ffb845]">{{ $section['title_colored'] ?? '' }}</span>
             <span class="text-white">{{ $section['title_white'] ?? '' }}</span>
         </h2>
+        <x-animated-highlight class=" mb-16" />
 
-        <div class="w-24 h-1 mx-auto mb-6 bg-gradient-to-r from-[#ffb845] to-[#ff8c00] rounded-full opacity-0 scale-x-50 transition-all duration-700 ease-out delay-150 origin-center"
-            x-data
-            x-intersect:enter="$el.classList.remove('opacity-0','scale-x-50'); $el.classList.add('opacity-100','scale-x-100')"
-            x-intersect:leave="$el.classList.add('opacity-0','scale-x-50'); $el.classList.remove('opacity-100','scale-x-100')">
-        </div>
-
-        <p class="text-gray-300 text-lg opacity-0 translate-y-6 transition-all duration-700 ease-out delay-300"
-            x-data
+        <p class="text-gray-300 text-lg opacity-0 translate-y-6 transition-all duration-700 ease-out delay-300" x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
             {{ $section['description'] ?? '' }}
@@ -35,8 +35,7 @@
         <div x-show="!isCarousel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach ($ebooks as $i => $ebook)
                 <div class="opacity-0 translate-y-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
-                    style="transition-delay: {{ $i * 150 }}ms"
-                    x-data
+                    style="transition-delay: {{ $i * 150 }}ms" x-data
                     x-intersect:enter="$el.classList.remove('opacity-0','translate-y-10'); $el.classList.add('opacity-100','translate-y-0')"
                     x-intersect:leave="$el.classList.add('opacity-0','translate-y-10'); $el.classList.remove('opacity-100','translate-y-0')">
                     <x-ebook-card :ebook="$ebook" :index="$loop->index" />
@@ -46,13 +45,11 @@
 
         <!-- Carousel (> 3 ebooks) -->
         <div x-show="isCarousel" class="relative overflow-hidden p-3">
-            <div x-ref="track" class="flex transition-transform duration-700 ease-in-out"
-                :style="`transform: translateX(-${offset}px)`"
-                @transitionend="onTransitionEnd">
+            <div x-ref="track" class="flex transition-transform duration-700 ease-in-out py-8"
+                :style="`transform: translateX(-${offset}px)`" @transitionend="onTransitionEnd">
                 @foreach ($ebooks as $i => $ebook)
                     <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-4 opacity-0 translate-y-10 transition-all duration-700 ease-out"
-                        style="transition-delay: {{ $i * 150 }}ms"
-                        x-data
+                        style="transition-delay: {{ $i * 150 }}ms" x-data
                         x-intersect:enter="$el.classList.remove('opacity-0','translate-y-10'); $el.classList.add('opacity-100','translate-y-0')"
                         x-intersect:leave="$el.classList.add('opacity-0','translate-y-10'); $el.classList.remove('opacity-100','translate-y-0')">
                         <x-ebook-card :ebook="$ebook" :index="$loop->index" />
@@ -82,8 +79,7 @@
     </div>
 
     <!-- CTA global -->
-    <div class="text-center mt-12 opacity-0 translate-y-6 transition-all duration-700 ease-out delay-500"
-        x-data
+    <div class="text-center mt-12 opacity-0 translate-y-6 transition-all duration-700 ease-out delay-500" x-data
         x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
         x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
         <x-button variant="outline" :href="$section['cta_all_link'] ?? '#'">

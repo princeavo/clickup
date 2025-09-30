@@ -3,10 +3,10 @@
     'index' => 0,
 ])
 
-<div
-    class="relative rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-500 ease-out cursor-pointer group
-           border bg-black/90 hover:scale-105 hover:z-30"
-    :class="active === {{ $index }} ? 'border-[#ffb845]' : 'border-gray-700'">
+<div class="relative rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-500 ease-out cursor-pointer group
+           border bg-gray-800/60 backdrop-blur-lg hover:z-30"
+    :class="active === {{ $index }} ? 'border-gray-800/60 z-30 transform scale-y-110' : 'border border-white/15'">
+
 
     <!-- Titre -->
     <h3 class="text-lg font-semibold text-[#ffb845] mb-4">

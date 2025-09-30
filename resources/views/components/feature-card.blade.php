@@ -1,28 +1,31 @@
-@props(['image', 'title', 'description', 'direction' => 'translate-y-6'])
+@props(['image', 'title', 'description', 'direction' => 'translate-y-6', 'class' => ''])
 
-<div class="group relative bg-gradient-to-b from-gray-900/70 to-black/70
-            border border-gray-800 rounded-2xl p-6 text-center shadow-xl
-            hover:shadow-purple-500/20 transition-all duration-500 hover:-translate-y-2
-            opacity-0 {{ $direction }} transition-all duration-700 ease-out" x-data
-
+<div class="group relative bg-gradient-to-b from-black/90 to-black
+            border border-gray-800 rounded-2xl p-8 text-left shadow-xl
+            hover:shadow-orange-500/20 transition-all duration-500 hover:-translate-y-2
+            opacity-0 {{ $direction }} transition-all duration-700 ease-out {{ $class }}"
+     x-data
      x-intersect:enter="$el.classList.remove('opacity-0','{{ $direction }}');
                         $el.classList.add('opacity-100','translate-x-0','translate-y-0')"
-
      x-intersect:leave="$el.classList.add('opacity-0','{{ $direction }}');
                         $el.classList.remove('opacity-100','translate-x-0','translate-y-0')">
 
     <!-- Glow -->
-    <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 to-orange-500/10
+    <div class="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-orange-400/10
                 opacity-0 group-hover:opacity-100 blur-2xl transition duration-500 -z-10"></div>
 
-    <!-- Image -->
-    <div class="flex justify-center mb-4">
-        <img src="{{ $image }}" alt="{{ $title }}" class="w-20 h-20 object-contain">
+    <!-- Header (image + title) -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-4">
+        <div class="flex-shrink-0 flex justify-center sm:justify-start">
+            <img src="{{ $image }}" alt="{{ $title }}" class="w-14 h-14 object-contain">
+        </div>
+        <h3 class="text-lg sm:text-xl font-bold text-orange-400 mt-3 sm:mt-0">
+            {{ $title }}
+        </h3>
     </div>
 
-    <!-- Title -->
-    <h3 class="text-xl font-bold text-white mb-3">{{ $title }}</h3>
-
     <!-- Description -->
-    <p class="text-gray-300 text-sm leading-relaxed">{{ $description }}</p>
+    <p class="text-gray-300 text-lg pt-4 leading-relaxed text-justify">
+        {{ $description }}
+    </p>
 </div>
