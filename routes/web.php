@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AgencyController;
 use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\SupportController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OffersController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -14,6 +16,11 @@ Route::get('/support', [SupportController::class, 'index'])->name('support');
 Route::get('/agency', [AgencyController::class, 'index'])->name('agency');
 
 Route::get('/results', [ResultsController::class, 'index'])->name('results');
+
+Route::get('/offers', [OffersController::class, 'index'])->name('offers');
+
+// Route pour la soumission du formulaire de contact
+Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 
 
 Route::get('/403', function () {

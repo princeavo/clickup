@@ -257,7 +257,7 @@ class HomeController extends Controller
         ];
 
         $prospect = [
-            'title' => "<span class='text-orange-400 italic'>Ton prospect scrolle ?</span>",
+            'title' => "<span class='text-orange-400 italic'>Ton prospect scroll ?</span>",
             'subtitle' => "Nous faisons en sorte qu’il s’arrête, qu’il clique et qu’il achète",
             'steps' => [
                 "Ta pub apparaît dans son feed",

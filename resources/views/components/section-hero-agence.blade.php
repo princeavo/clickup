@@ -8,10 +8,13 @@
 
 <section class="relative overflow-hidden bg-[#0b1520]"
     style="background-image: url('{{ asset('banner-home.jpg') }}'); background-size: cover; background-position: center;">
-    {{-- Glow & grille discrets en fond --}}
+    {{-- Overlay sombre --}}
+    <div class="absolute inset-0 bg-black/85"></div>
+    
+    {{-- Glow orange en fond --}}
     <div class="pointer-events-none absolute inset-0 -z-10">
-        <div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-purple-600/25 blur-3xl"></div>
-        <div class="absolute -bottom-24 -right-10 h-[28rem] w-[28rem] rounded-full bg-fuchsia-600/20 blur-3xl"></div>
+        <div class="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-[#ff8c00]/20 blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-10 h-[28rem] w-[28rem] rounded-full bg-[#ffb845]/15 blur-3xl"></div>
         <div class="absolute inset-0 opacity-[0.08]"
             style="background-image: radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0);
                 background-size: 20px 20px;">
@@ -43,19 +46,11 @@
                 Nous installons une machine à vendre qui transforme ton budget pub en croissance rentable et prévisible
             </p>
 
-            {{-- <x-button variant="custom-orange" href="{{ $buttonLink }}">
-                {{ $buttonText }}
-            </x-button> --}}
-
-            <a href="{{ $buttonLink }}"
-                class="group relative mt-8 inline-flex select-none rounded-xl p-[2px] focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400/10">
-                <span
-                    class="absolute inset-0 rounded-xl bg-orange-400 opacity-50 transition-all duration-300 group-hover:bg-transparent"></span>
-                <span
-                    class="relative rounded-[10px] px-7 py-4 text-base md:text-lg font-semibold text-white shadow-[0_8px_24px_rgba(255,165,0,0.25)] transition-transform duration-300 group-hover:translate-y-[-1px] group-active:translate-y-[0px]">
-                    {{ $buttonText }} </span> <span
-                    class="absolute inset-0 rounded-xl border-2 border-transparent transition-all duration-300 group-hover:border-orange-400"></span>
-            </a>
+            <div class="mt-8">
+                <x-button variant="primary" :href="$buttonLink">
+                    {{ $buttonText }}
+                </x-button>
+            </div>
 
         </div>
 
@@ -63,7 +58,7 @@
         <div class="flex-1 w-full relative motion-safe:animate-hero-reveal-right"
             @mousemove="mx = $event.offsetX; my = $event.offsetY">
             <!-- Fond dégradé orange avec flou -->
-            <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-orange-400/20 to-yellow-400/20 blur-2xl">
+            <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-[#ff8c00]/20 to-[#ffb845]/20 blur-2xl">
             </div>
             <div
                 class="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden rounded-3xl border border-white/10 bg-white/5">

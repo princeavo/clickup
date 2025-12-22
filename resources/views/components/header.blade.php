@@ -2,9 +2,9 @@
     'links' => [
         ['label' => 'Accueil',       'href' => route('home'),     'active' => request()->routeIs('home')],
         ['label' => 'Agence',        'href' => route('agency'),   'active' => request()->routeIs('agency')],
-        ['label' => 'Résultats',     'href' => route('results'),  'active' => request()->is('resultats')],
+        ['label' => 'Résultats',     'href' => route('results'),  'active' => request()->routeIs('results')],
         ['label' => 'Accompagnement','href' => route('support'),  'active' => request()->routeIs('support')],
-        ['label' => 'Ressources',    'href' => '#ressources',     'active' => request()->is('ressources')],
+        ['label' => 'Nos Offres',    'href' => route('offers'),   'active' => request()->routeIs('offers')],
     ],
     'logo' => asset('logo-header.png'),
     'brand' => 'ClickUp',

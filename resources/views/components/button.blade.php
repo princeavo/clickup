@@ -2,6 +2,7 @@
     'href' => '#',
     'variant' => 'primary',
     'class' => '',
+    'type' => null,
 ])
 
 @php
@@ -19,6 +20,12 @@
     $variantClass = $variants[$variant] ?? $variants['primary'];
 @endphp
 
-<a href="{{ $href }}" {{ $attributes->merge(['class' => trim("$base $variantClass $class")]) }}>
-    {{ $slot }}
-</a>
+@if($type === 'submit')
+    <button type="submit" {{ $attributes->merge(['class' => trim("$base $variantClass $class")]) }}>
+        {{ $slot }}
+    </button>
+@else
+    <a href="{{ $href }}" {{ $attributes->merge(['class' => trim("$base $variantClass $class")]) }}>
+        {{ $slot }}
+    </a>
+@endif
