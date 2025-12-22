@@ -51,11 +51,11 @@
         </nav>
 
         <!-- CTA -->
-        <a href="{{ $ctaHref }}"
-           class="hidden md:inline-block bg-orange-500 text-white px-4 md:px-6 py-2 rounded-full font-semibold shadow
-                  hover:scale-105 active:scale-95 transition-transform">
-            {{ $ctaLabel }}
-        </a>
+        <div class="hidden md:block">
+            <x-button :href="$ctaHref" variant="primary">
+                {{ $ctaLabel }}
+            </x-button>
+        </div>
 
         <!-- Hamburger -->
         <button @click="open = !open" class="md:hidden text-white focus:outline-none relative z-[60]" aria-label="Menu">
@@ -94,11 +94,9 @@
                 @endforeach
             </nav>
 
-            <a href="{{ $ctaHref }}"
-               class="block text-center bg-orange-500 text-black px-4 py-3 rounded-full font-semibold shadow
-                      hover:scale-105 active:scale-95 transition-transform duration-300">
+            <x-button :href="$ctaHref" variant="primary" class="block text-center">
                 {{ $ctaLabel }}
-            </a>
+            </x-button>
         </div>
     </div>
 </header>

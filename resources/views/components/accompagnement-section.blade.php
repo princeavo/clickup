@@ -76,12 +76,9 @@
         <!-- CTA -->
         <div class="mt-10 text-center transition-all duration-700 delay-400"
             :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-            <a href="{{ $cta['href'] ?? '#' }}"
-                class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold
-                      bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black shadow-lg shadow-orange-500/25
-                      hover:shadow-orange-500/50 hover:scale-105 active:scale-100 transition-transform">
+            <x-button :href="$cta['href'] ?? '#'" variant="primary">
                 {{ $cta['text'] ?? 'Découvrir' }}
-            </a>
+            </x-button>
         </div>
 
         <!-- Cartes -->
@@ -117,12 +114,9 @@
 
         <!-- CTA bas -->
         <div class="mt-10 text-center">
-            <a href="{{ $cta['href'] ?? '#' }}"
-                class="inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full font-semibold
-                      bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black shadow-lg shadow-orange-500/25
-                      hover:shadow-orange-500/50 hover:scale-105 active:scale-100 transition-transform">
+            <x-button :href="$cta['href'] ?? '#'" variant="primary">
                 {{ $cta['text'] ?? 'Notre Accompagnement' }}
-            </a>
+            </x-button>
         </div>
     </div>
 </section>

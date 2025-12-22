@@ -63,13 +63,9 @@
         <div class="mt-16 opacity-0 translate-y-6 transition-all duration-700 ease-out delay-500" x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <a href="#success-stories"
-                class="inline-block px-8 py-3 rounded-xl font-bold text-[#111111]
-                      bg-gradient-to-r from-[#ffb845] to-[#ff8c00]
-                      hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30
-                      transition-all duration-300">
+            <x-button href="#success-stories" variant="primary">
                 Voir nos Success Stories
-            </a>
+            </x-button>
         </div>
     </div>
 </section>
