@@ -13,12 +13,12 @@
 
         <!-- Texte gauche -->
         <div class="text-left">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 transition-all duration-700"
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 transition-all duration-700"
                 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
                 <span class="text-orange-400 italic">{!! $title !!}</span>
             </h2>
 
-            <p class="text-gray-300 max-w-md leading-relaxed transition-all duration-700 delay-200"
+            <p class="text-xl md:text-2xl text-gray-300 max-w-md leading-relaxed transition-all duration-700 delay-200"
                 :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
                 {!! $subtitle !!}
             </p>
@@ -28,7 +28,7 @@
         <div class="relative flex justify-center md:justify-end items-center">
             <img src="{{ asset('prospect-steps.png') }}"
                  alt="Étapes du prospect"
-                 class="w-72 sm:w-80 md:w-[420px] transition-all duration-700"
+                 class="w-80 sm:w-96 md:w-[500px] lg:w-[600px] transition-all duration-700"
                  :class="shown ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-50 translate-x-20'">
         </div>
 

@@ -9,7 +9,6 @@
     x-intersect:leave="visible = false"
     @scroll.window="scrollPosition = window.scrollY"
     class="relative min-h-[calc(100vh-80px)] flex flex-col items-center justify-center text-center px-6 overflow-hidden transition-all duration-500 ease-out"
-    style="background-image: url({{ asset('images/results-hero-bg.png') }}); background-size: cover; background-position: center;"
 >
     <!-- Overlay sombre -->
     <div class="absolute inset-0 bg-black/60 -z-10"></div>

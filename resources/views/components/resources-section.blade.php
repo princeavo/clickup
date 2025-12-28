@@ -8,7 +8,7 @@
 ])
 
 <section x-data="{ shown: false }" x-intersect="shown = true" x-intersect:leave="shown = false"
-    class="relative py-24 bg-gradient-to-b from-[#04131c] to-[#0a1f2d] text-white overflow-hidden">
+    class="relative py-24 bg-black text-white overflow-hidden">
 
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
@@ -19,7 +19,7 @@
     <div class="max-w-6xl mx-auto px-6 text-center">
 
         <!-- Titre -->
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 transition-all duration-700"
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 transition-all duration-700"
             :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
             Pourquoi <span class="text-[#ffb845]">Facebook & TikTok</span> sont deux leviers de croissance puissants en 2025
         </h2>

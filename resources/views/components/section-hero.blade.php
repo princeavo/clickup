@@ -1,10 +1,9 @@
 @props(['title', 'buttonText', 'buttonLink', 'image'])
 
 <section x-data="{ visible: false }" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
-    class="relative w-full min-h-screen overflow-hidden flex items-center bg-cover bg-center bg-no-repeat min-h[calc(100vh-80px)] pt-28 md:pt-32"
-    style="background-image: url('{{ asset('storage/accompagnements/bg-hero.jpg') }}');">
+    class="relative w-full min-h-screen overflow-hidden flex items-center bg-cover bg-center bg-no-repeat min-h[calc(100vh-80px)] pt-28 md:pt-32">
     <!-- Overlay -->
-    <div class="absolute inset-0 bg-black/70 -z-10"></div>
+    <div class="absolute inset-0 -z-10"></div>
 
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6">
         <!-- Texte -->

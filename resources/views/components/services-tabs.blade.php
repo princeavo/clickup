@@ -11,7 +11,7 @@
             <span class="bg-gradient-to-r from-[#ffb845] to-[#ff8c00] bg-clip-text text-transparent">
                 le pilote automatique
             </span>
-            de tes ventes 🚀
+            de tes ventes
         </h2>
 
         <!-- Ligne de séparation -->

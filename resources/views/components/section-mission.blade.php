@@ -49,7 +49,7 @@
         {{-- Sous-titre animé --}}
         <p x-data="{ show: false }" x-intersect:enter="show=true" x-intersect:leave="show=false"
             :class="show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'"
-            class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto transition-all duration-700">
+            class="mt-6 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto transition-all duration-700">
             Notre mission est de rendre cela possible, d'abord pour nos clients en Afrique et en Europe, puis dans le
             monde entier.
         </p>
@@ -65,7 +65,7 @@
                     :class="show ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 scale-95 {{ $dir }}'"
                     class="transition-all duration-700 ease-out flex flex-col items-center">
                     {{-- Pill titre --}}
-                    <div class="mb-6 inline-flex items-center justify-center px-6 py-3 rounded-full border  border-orange bg-black/50 cursor-pointer   backdrop-blur-sm text-orange-400 font-semibold text-lg transition-transform duration-500"
+                    <div class="mb-6 inline-flex items-center justify-center px-6 py-3 rounded-full border  border-orange bg-black/50 cursor-pointer   backdrop-blur-sm text-orange-400 font-semibold text-xl transition-transform duration-500"
                         :class="show ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-70'">
                         {{ $v['title'] }}
                     </div>
@@ -73,7 +73,7 @@
                     {{-- Bloc descriptif centré verticalement --}}
                     <div
                         class="rounded-2xl border border-gray-700 p-8 min-h-[220px] w-full bg-black/30 backdrop-blur-sm flex flex-col justify-center text-center">
-                        <p class="text-gray-200 text-base leading-relaxed">
+                        <p class="text-gray-200 text-lg leading-relaxed">
                             {{ $v['description'] }}
                         </p>
                     </div>

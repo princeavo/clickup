@@ -5,18 +5,10 @@
     'ctaLink' => '#contact',
 ])
 
-<section class="relative min-h-[calc(100vh-80px)] flex items-center justify-center text-center overflow-hidden bg-[#050510] pt-28 md:pt-32">
-
-    <!-- 🌌 Background animé (Ken Burns) -->
-    <div class="absolute inset-0 bg-cover bg-center scale-105 animate-kenburns"
-        style="background-image: url({{ asset('banner-home.jpg') }});">
-    </div>
-
-    <!-- 🌫️ Blur -->
-    <div class="absolute inset-0 backdrop-blur-[12px]"></div>
+<section class="relative min-h-[calc(100vh-80px)] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-32">
 
     <!-- Overlay sombre -->
-    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="absolute inset-0"></div>
 
     <!-- Effets de glow orange -->
     <div class="absolute inset-0 -z-10">

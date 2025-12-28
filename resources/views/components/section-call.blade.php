@@ -1,6 +1,6 @@
 @props(['callToAction', 'formFields'])
 
-<section class="relative py-20 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#0a1f2d] to-[#04131c] text-gray-100 overflow-hidden">
+<section class="relative py-20 px-6 md:px-12 lg:px-20 bg-stone-900 text-gray-100 overflow-hidden">
     <!-- Dégradés animés orange -->
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#ff8c00]/10 via-[#0a1f2d] to-black"></div>
     <div class="absolute top-0 right-0 w-[25rem] h-[25rem] bg-[#ff8c00]/15 blur-3xl rounded-full animate-pulse"></div>
@@ -8,14 +8,14 @@
 
     <!-- Intro -->
     <div class="text-center max-w-3xl mx-auto mb-12">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-white leading-snug drop-shadow-lg
+        <h2 class="text-3xl md:text-4xl font-extrabold leading-snug drop-shadow-lg
                    opacity-0 translate-y-6 transition-all duration-700 ease-out"
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
                                $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
                                $el.classList.remove('opacity-100','translate-y-0')">
-            {{ $callToAction['title'] }}
+            Tu veux <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]">transformer ton business</span> en <span class="text-orange-400">machine à vendre</span>
         </h2>
         <p class="text-lg text-gray-400 mt-6 leading-relaxed
                   opacity-0 translate-y-6 transition-all duration-700 ease-out delay-200"

@@ -14,10 +14,11 @@
 ])
 
 <header
-    x-data="{ open:false, lastScroll:0, hidden:false }"
+    x-data="{ open:false, lastScroll:0, hidden:false, scrolled:false }"
     x-init="
         window.addEventListener('scroll', () => {
             let current = window.scrollY;
+            scrolled = current > 50;
             if (current > lastScroll && current > 80) {
                 hidden = true;  // scroll vers le bas → cacher
             } else {
@@ -27,12 +28,14 @@
         });
     "
     x-effect="document.documentElement.classList.toggle('overflow-hidden', open)"
-    :class="hidden ? '-translate-y-full' : 'translate-y-0'"
-    class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/80 border-b border-white/20
+    :class="{
+        '-translate-y-full': hidden,
+        'translate-y-0': !hidden,
+        'bg-orange-900/80 backdrop-blur-md': scrolled,
+        'bg-transparent': !scrolled
+    }"
+    class="fixed top-0 left-0 w-full z-50 border-b border-white/20
            transition-all duration-500 ease-in-out"
-    @if ($bgImage)
-        style="background-image: url('{{ $bgImage }}'); background-size:cover; background-position:center;"
-    @endif
 >
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">
 

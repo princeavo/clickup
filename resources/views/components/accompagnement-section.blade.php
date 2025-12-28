@@ -30,7 +30,7 @@
 ])
 
 <section x-data="{ shown: false }" x-intersect="shown = true" x-intersect:leave="shown = false"
-    class="relative py-16 md:py-20 bg-gradient-to-b from-[#0b0f17] via-[#0a0f16] to-black text-white overflow-hidden">
+    class="relative py-16 md:py-20 bg-zinc-900 text-white overflow-hidden">
     <!-- Fond halo -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-[#ff8c00]/15 blur-3xl"></div>
@@ -43,7 +43,7 @@
             <!-- Col gauche -->
             <div :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'"
                 class="transition-all duration-700 ease-out">
-                <h2 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+                <h2 class="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
                     {!! $title !!}
                 </h2>
                 <div class="w-20 h-[3px] mt-5 rounded-full bg-gradient-to-r from-[#ffb845] to-[#ff8c00]"
@@ -102,11 +102,11 @@
 
 
                             <h3
-                                class="text-lg font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]">
+                                class="text-xl md:text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]">
                                 {{ $item['title'] }}
                             </h3>
                         </div>
-                        <p class="mt-4 text-gray-300 text-sm leading-relaxed">{{ $item['description'] }}</p>
+                        <p class="mt-4 text-gray-300 text-base md:text-lg leading-relaxed">{{ $item['description'] }}</p>
                     </div>
                 </article>
             @endforeach

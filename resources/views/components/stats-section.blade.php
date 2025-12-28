@@ -63,8 +63,8 @@
         <div class="mt-16 opacity-0 translate-y-6 transition-all duration-700 ease-out delay-500" x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <x-button href="#success-stories" variant="primary">
-                Voir nos Success Stories
+            <x-button href="#success-stories" variant="primary" class="text-lg px-8 py-4">
+                Nos Success Stories
             </x-button>
         </div>
     </div>

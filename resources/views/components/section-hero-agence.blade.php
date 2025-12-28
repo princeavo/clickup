@@ -6,10 +6,9 @@
     'imageAlt' => 'Illustration',
 ])
 
-<section class="relative overflow-hidden bg-[#0b1520]"
-    style="background-image: url('{{ asset('banner-home.jpg') }}'); background-size: cover; background-position: center;">
+<section class="relative overflow-hidden">
     {{-- Overlay sombre --}}
-    <div class="absolute inset-0 bg-black/85"></div>
+    <div class="absolute inset-0"></div>
     
     {{-- Glow orange en fond --}}
     <div class="pointer-events-none absolute inset-0 -z-10">

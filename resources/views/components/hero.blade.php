@@ -16,15 +16,7 @@
     'background' => 'banner-home.jpg',
 ])
 <section
-    class="relative min-h-[calc(100vh-80px)] flex items-center justify-center text-center overflow-hidden bg-[#050510] pt-28 md:pt-32">
-
-    <!-- 🌌 Background animé (Ken Burns) -->
-    <div class="absolute inset-0 bg-cover bg-center scale-105 animate-kenburns"
-        style="background-image: url({{ asset($background) }});">
-    </div>
-
-    <!-- 🌫️ Blur -->
-    <div class="absolute inset-0 backdrop-blur-[12px]"></div>
+    class="relative min-h-[calc(100vh-80px)] flex items-center justify-center text-center overflow-hidden pt-28 md:pt-32">
 
     <!-- 📌 Contenu -->
     <div class="relative z-10 px-6 max-w-4xl animate-hero-intro">

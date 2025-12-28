@@ -1,4 +1,4 @@
-<section class="relative bg-gradient-to-b from-[#0a1f2d] to-[#04131c] py-24 overflow-hidden">
+<section class="relative bg-neutral-800 py-24 overflow-hidden">
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#ff8c00]/10 rounded-full blur-3xl"></div>
