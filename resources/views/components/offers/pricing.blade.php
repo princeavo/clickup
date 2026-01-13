@@ -14,7 +14,7 @@
                        opacity-0 translate-y-6 transition-all duration-700 ease-out"
                 x-data
                 x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
-                Choisis l'offre qui <span class="text-[#ffb845]">correspond à tes ambitions</span>
+                Choisis l'offre qui <span class="text-orange-400">correspond à tes ambitions</span>
             </h2>
             
             <x-animated-highlight />
@@ -57,7 +57,7 @@
                         <!-- Prix -->
                         <div class="mb-6">
                             <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-extrabold text-[#ffb845]">{{ $offer['price'] }}€</span>
+                                <span class="text-4xl font-extrabold text-orange-400">{{ $offer['price'] }}€</span>
                                 @if($offer['period'])
                                     <span class="text-gray-400">{{ $offer['period'] }}</span>
                                 @endif
@@ -71,7 +71,7 @@
                         <ul class="space-y-3 mb-8 flex-grow">
                             @foreach($offer['features'] as $feature)
                                 <li class="flex items-start gap-3 text-gray-300">
-                                    <svg class="w-5 h-5 text-[#ffb845] mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <svg class="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                     </svg>
                                     <span>{{ $feature }}</span>

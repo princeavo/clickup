@@ -54,7 +54,7 @@
                     'bg-[#111111]/80 text-gray-300 border-gray-700 hover:bg-[#1a1a1a] hover:border-[#ff8c00]/50 hover:text-white'">
                 <span
                     class="w-8 h-8 flex items-center justify-center rounded-full text-sm font-bold transition-all duration-500"
-                    :class="activeTab === index ? 'bg-black/20 text-black' : 'bg-[#ff8c00]/20 text-[#ffb845]'">
+                    :class="activeTab === index ? 'bg-black/20 text-black' : 'bg-[#ff8c00]/20 text-orange-400'">
                     <span x-text="step.number"></span>
                 </span>
                 <span x-text="step.title" class="text-sm md:text-base font-semibold"></span>
@@ -94,7 +94,7 @@
                                          bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black font-bold text-lg 
                                          shadow-lg shadow-[#ff8c00]/50"
                                 x-text="step.number"></span>
-                            <span class="text-sm font-semibold text-[#ffb845] uppercase tracking-wide" 
+                            <span class="text-sm font-semibold text-orange-400 uppercase tracking-wide" 
                                   x-text="step.week"></span>
                         </div>
 
@@ -110,7 +110,7 @@
                         <div class="flex flex-wrap gap-2">
                             <template x-for="tag in step.tags" :key="tag">
                                 <span class="px-4 py-2 rounded-full border-2 border-[#ff8c00]/50 
-                                             text-[#ffb845] text-sm font-semibold
+                                             text-orange-400 text-sm font-semibold
                                              bg-[#ff8c00]/10 hover:bg-[#ff8c00]/20 
                                              hover:border-[#ff8c00] transition-all duration-300">
                                     <span x-text="tag"></span>

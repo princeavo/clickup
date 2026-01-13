@@ -3,8 +3,8 @@
 @section('title', 'Accueil - ClickUp')
 
 @section('hero')
-    <x-hero titlePart1="On transforme" titlePart2="ton budget pub" titlePart3="en" titlePart4="ventes prévisibles"
-        subtitle=" <strong class='text-orange-400'>ClickUp</strong>, l’agence spécialisée Facebook & TikTok Ads qui aide les marques e-commerce (15–50k€/mois) à scaler x2/x3 et stabiliser leurs ventes en 61 jours grâce à la <span class='text-orange-400'>méthode CREA™</span>."
+    <x-hero titlePart1="Transforme tes ventes de " titlePart2="montagnes russes" titlePart3="en machine" titlePart4=" à cash prévisible"
+        subtitle="L'agence Facebook & TikTok Ads pour les marques mois qui veulent scaler sans stress. Notre <span class='text-orange-400'>méthode CREA™</span> te garantit un flux constant de ventes fini les mois à 40K€ suivis de 18K€."
         cta="Réserve ton Audit Gratuit" ctaLink="#contact" background="banner-home.jpg" />
 
 @endsection
@@ -23,8 +23,8 @@
 
 
         <x-resources-section
-            title="Pourquoi <span class='text-[#ffb845]'>Facebook & TikTok</span> sont deux leviers de croissance puissants en 2025"
-            subtitle="Tes clients y passent des heures chaque jour. Ces plateformes connaissent leurs envies mieux qu’eux-mêmes. Avec la bonne stratégie, tu peux transformer ce temps d’écran en temps de caisse."
+            title="Pourquoi <span class='text-orange-400'>Facebook & TikTok Ads</span> les 2 meilleurs leviers pour scaler en 2026"
+            subtitle="Tes futurs clients scrollent 3h/jour sur ces plateformes. Si tu n'y es pas avec une stratégie solide, tu laisses des millions sur la table."
             cta="Nos ressources" :resources="$resources" />
 
         <x-accompagnement-section :title="$accompagnement['title']" :subtitle="$accompagnement['subtitle']" :cta="$accompagnement['cta']" :items="$accompagnement['items']" />

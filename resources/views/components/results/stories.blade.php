@@ -13,7 +13,7 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <span class="text-[#ffb845]">Success Stories</span> de nos clients
+            <span class="text-orange-400">Success Stories</span> de nos clients
         </h2>
         
         <x-animated-highlight class="mb-16" />
@@ -71,7 +71,7 @@
                             <a href="{{ $story['link'] }}"
                                @mouseenter="clearTimeout(popupTimeout); popupTimeout = setTimeout(() => showPopup = true, 300)"
                                @mouseleave="popupTimeout = setTimeout(() => showPopup = false, 200)"
-                               class="inline-flex items-center gap-2 text-[#ffb845] hover:text-[#ff8c00] font-semibold transition group/link">
+                               class="inline-flex items-center gap-2 text-orange-400 hover:text-[#ff8c00] font-semibold transition group/link">
                                 En savoir plus
                                 <svg xmlns="http://www.w3.org/2000/svg" 
                                      class="w-5 h-5 group-hover/link:translate-x-1 transition-transform" 
@@ -100,7 +100,7 @@
                                 <!-- Contenu du popup -->
                                 <div class="relative z-10">
                                     <!-- Titre -->
-                                    <h4 class="text-lg font-bold text-[#ffb845] mb-3">{{ $story['brand'] }}</h4>
+                                    <h4 class="text-lg font-bold text-orange-400 mb-3">{{ $story['brand'] }}</h4>
                                     
                                     <!-- Solution -->
                                     <div class="mb-4">
@@ -148,7 +148,7 @@
 
                     <!-- Badge numéro -->
                     <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-black/50 backdrop-blur-sm border border-[#ff8c00]/30 text-[#ffb845] font-bold text-sm">
+                                bg-black/50 backdrop-blur-sm border border-[#ff8c00]/30 text-orange-400 font-bold text-sm">
                         {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                     </div>
                 </div>

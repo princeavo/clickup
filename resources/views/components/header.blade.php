@@ -34,7 +34,7 @@
         'bg-orange-900/80 backdrop-blur-md': scrolled,
         'bg-transparent': !scrolled
     }"
-    class="fixed top-0 left-0 w-full z-50 border-b border-white/20
+    class="fixed top-0 left-0 w-full z-50
            transition-all duration-500 ease-in-out"
 >
     <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3">

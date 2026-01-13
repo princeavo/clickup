@@ -15,7 +15,7 @@
                                       $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
                                $el.classList.remove('opacity-100','translate-y-0')">
-            En 2025, <span class="text-[#ffb845]">la publicité n'est plus une option</span>, c'est ta survie.
+            En 2025, <span class="text-orange-400">la publicité n'est plus une option</span>, c'est ta survie.
         </h2>
         
         <x-animated-highlight />
@@ -74,14 +74,14 @@
                 <!-- Icône SVG -->
                 <div class="flex justify-center mb-6 mt-6">
                     <div class="w-20 h-20 flex items-center justify-center rounded-full 
-                                bg-gradient-to-br from-[#ff8c00]/20 to-[#ffb845]/20 text-[#ffb845]
+                                bg-gradient-to-br from-[#ff8c00]/20 to-[#ffb845]/20 text-orange-400
                                 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
                         {!! $svgIcons[$i] !!}
                     </div>
                 </div>
 
                 <!-- Titre -->
-                <h3 class="text-xl font-bold text-center text-white mb-4 group-hover:text-[#ffb845] transition">
+                <h3 class="text-xl font-bold text-center text-white mb-4 group-hover:text-orange-400 transition">
                     {{ $step['title'] }}
                 </h3>
 

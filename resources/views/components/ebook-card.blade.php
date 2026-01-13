@@ -9,7 +9,7 @@
 
 
     <!-- Titre -->
-    <h3 class="text-lg font-semibold text-[#ffb845] mb-4">
+    <h3 class="text-lg font-semibold text-orange-400 mb-4">
         {{ $ebook['title'] }}
     </h3>
 

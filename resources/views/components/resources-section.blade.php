@@ -1,7 +1,7 @@
 @props([
     'title' => 'Pourquoi Facebook & TikTok sont deux leviers de croissance puissants en 2025',
     'subtitle' =>
-        'Tes clients y passent des heures chaque jour. Ces plateformes connaissent leurs envies mieux qu\'eux-mêmes. Avec la bonne stratégie, tu peux transformer ce temps d\'écran en temps de caisse.',
+        'Tes futurs clients scrollent 3h/jour sur ces plateformes. Si tu n\'y es pas avec une stratégie solide, tu laisses des millions sur la table.',
     'cta' => 'Nos ressources',
     'ctaUrl' => '#',
     'resources' => [],
@@ -21,7 +21,7 @@
         <!-- Titre -->
         <h2 class="text-4xl md:text-6xl font-bold mb-6 transition-all duration-700"
             :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
-            Pourquoi <span class="text-[#ffb845]">Facebook & TikTok</span> sont deux leviers de croissance puissants en 2025
+            Pourquoi <span class="text-orange-400">Facebook & TikTok Ads</span> les 2 meilleurs leviers pour scaler en 2026
         </h2>
 
         <x-animated-highlight />
@@ -62,13 +62,13 @@
 
                     <!-- Icône SVG -->
                     <div class="w-20 h-20 mx-auto mb-6 flex items-center justify-center rounded-full 
-                                bg-gradient-to-br from-[#ffb845] to-[#ff8c00] text-white shadow-lg shadow-[#ff8c00]/50
+                                bg-orange-400 text-white shadow-lg shadow-orange-400/50
                                 transform transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                         {!! $svgIcons[$index] !!}
                     </div>
 
                     <!-- Titre -->
-                    <h3 class="text-xl font-bold text-[#ffb845] mb-4 text-center group-hover:text-[#ff8c00] transition">
+                    <h3 class="text-xl font-bold text-orange-400 mb-4 text-center group-hover:text-orange-400 transition">
                         {{ $resource['title'] }}
                     </h3>
 
@@ -76,12 +76,6 @@
                     <p class="text-gray-300 text-center leading-relaxed">
                         {!! $resource['description'] !!}
                     </p>
-
-                    <!-- Badge numéro -->
-                    <div class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full 
-                                bg-[#ff8c00]/20 text-[#ffb845] font-bold text-sm">
-                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
-                    </div>
                 </div>
             @endforeach
         </div>

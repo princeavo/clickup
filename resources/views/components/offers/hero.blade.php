@@ -22,7 +22,7 @@
         <div class="mb-6 opacity-0 translate-y-6 transition-all duration-700 ease-out"
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
-            <span class="inline-flex items-center gap-2 rounded-full border border-[#ffb845]/30 bg-[#ffb845]/10 px-4 py-2 text-sm font-semibold text-[#ffb845] backdrop-blur-sm">
+            <span class="inline-flex items-center gap-2 rounded-full border border-[#ffb845]/30 bg-[#ffb845]/10 px-4 py-2 text-sm font-semibold text-orange-400 backdrop-blur-sm">
                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
                 </svg>
@@ -57,7 +57,7 @@
             <x-button :href="$ctaLink" variant="primary" class="text-lg px-10 py-4">
                 {{ $cta }}
             </x-button>
-            <a href="#pricing" class="inline-flex items-center gap-2 text-white hover:text-[#ffb845] font-semibold transition">
+            <a href="#pricing" class="inline-flex items-center gap-2 text-white hover:text-orange-400 font-semibold transition">
                 Voir les offres
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -71,19 +71,19 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-[#ffb845] mb-2">100+</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">100+</div>
                 <div class="text-sm text-gray-400">Clients accompagnés</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-[#ffb845] mb-2">24M€</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">24M€</div>
                 <div class="text-sm text-gray-400">CA généré</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-[#ffb845] mb-2">92%</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">92%</div>
                 <div class="text-sm text-gray-400">Satisfaction</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-[#ffb845] mb-2">300K€</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">300K€</div>
                 <div class="text-sm text-gray-400">Budget mensuel</div>
             </div>
         </div>
@@ -91,7 +91,7 @@
 
     <!-- Flèche scroll -->
     <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#pricing" class="text-white/50 hover:text-[#ffb845] transition">
+        <a href="#pricing" class="text-white/50 hover:text-orange-400 transition">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
             </svg>

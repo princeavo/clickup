@@ -14,7 +14,7 @@
                        opacity-0 translate-y-6 transition-all duration-700 ease-out"
                 x-data
                 x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
-                <span class="text-[#ffb845]">Ressources gratuites</span> pour booster tes campagnes
+                <span class="text-orange-400">Ressources gratuites</span> pour booster tes campagnes
             </h2>
             
             <x-animated-highlight />
@@ -64,7 +64,7 @@
 
                     <!-- Contenu -->
                     <div class="p-6">
-                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[#ffb845] transition">
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-orange-400 transition">
                             {{ $magnet['title'] }}
                         </h3>
                         <p class="text-sm text-gray-400 mb-4 leading-relaxed">
@@ -73,7 +73,7 @@
 
                         <!-- Bouton téléchargement -->
                         <a href="{{ $magnet['downloadLink'] }}" 
-                           class="inline-flex items-center gap-2 text-[#ffb845] hover:text-[#ff8c00] font-semibold text-sm transition group/link">
+                           class="inline-flex items-center gap-2 text-orange-400 hover:text-[#ff8c00] font-semibold text-sm transition group/link">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                             </svg>

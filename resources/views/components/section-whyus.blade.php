@@ -16,7 +16,7 @@
                                $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
                                $el.classList.remove('opacity-100','translate-y-0')">
-            Pourquoi <span class="text-[#ffb845]">travailler avec nous ?</span>
+            Pourquoi <span class="text-orange-400">travailler avec nous ?</span>
         </h2>
 
         <x-animated-highlight class="mb-16" />
@@ -56,7 +56,7 @@
                     </div>
 
                     <!-- Titre -->
-                    <h3 class="text-xl font-bold text-white mb-4 text-center group-hover:text-[#ffb845] transition">
+                    <h3 class="text-xl font-bold text-white mb-4 text-center group-hover:text-orange-400 transition">
                         {{ $feature['title'] }}
                     </h3>
 
@@ -67,7 +67,7 @@
 
                     <!-- Badge numéro -->
                     <div class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full 
-                                bg-[#ff8c00]/20 text-[#ffb845] font-bold text-sm">
+                                bg-[#ff8c00]/20 text-orange-400 font-bold text-sm">
                         {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
                     </div>
                 </div>

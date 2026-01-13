@@ -14,7 +14,7 @@
                        opacity-0 translate-y-6 transition-all duration-700 ease-out"
                 x-data
                 x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
-                Toutes nos <span class="text-[#ffb845]">ressources</span> à ta disposition
+                Toutes nos <span class="text-orange-400">ressources</span> à ta disposition
             </h2>
             
             <x-animated-highlight />
@@ -58,7 +58,7 @@
                     </div>
 
                     <!-- Titre -->
-                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-[#ffb845] transition">
+                    <h3 class="text-xl font-bold text-white mb-3 group-hover:text-orange-400 transition">
                         {{ $resource['title'] }}
                     </h3>
 
@@ -68,7 +68,7 @@
                     </p>
 
                     <!-- Count -->
-                    <div class="flex items-center gap-2 text-sm text-[#ffb845] font-semibold">
+                    <div class="flex items-center gap-2 text-sm text-orange-400 font-semibold">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
@@ -77,7 +77,7 @@
 
                     <!-- Flèche -->
                     <div class="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <svg class="w-6 h-6 text-[#ffb845]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
                         </svg>
                     </div>

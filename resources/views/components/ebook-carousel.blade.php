@@ -18,7 +18,7 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <span class="text-[#ffb845]">{{ $section['title_colored'] ?? '' }}</span>
+            <span class="text-orange-400">{{ $section['title_colored'] ?? '' }}</span>
             <span class="text-white">{{ $section['title_white'] ?? '' }}</span>
         </h2>
         <x-animated-highlight class=" mb-16" />

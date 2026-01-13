@@ -12,7 +12,7 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <span class="text-[#ffb845]">Pourquoi</span> nous avons créé ClickUp
+            <span class="text-orange-400">Pourquoi</span> nous avons créé ClickUp
         </h2>
 
         <x-animated-highlight />
@@ -23,7 +23,7 @@
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
             Le constat était brutal : trop d'agences vendent du rêve à prix d'or, mais livrent des résultats décevants.
-            <span class="text-[#ffb845] font-semibold">ClickUp naît d'une conviction simple : apporter de la performance réelle.</span>
+            <span class="text-orange-400 font-semibold">ClickUp naît d'une conviction simple : apporter de la performance réelle.</span>
         </p>
 
         {{-- 3 Divisions horizontales --}}
@@ -99,7 +99,7 @@
 
                     {{-- Numéro --}}
                     <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-[#ff8c00]/20 text-[#ffb845] font-bold text-lg">
+                                bg-[#ff8c00]/20 text-orange-400 font-bold text-lg">
                         02
                     </div>
 
@@ -112,19 +112,19 @@
                     </div>
 
                     {{-- Titre --}}
-                    <h3 class="text-2xl font-bold text-[#ffb845] mb-4 text-center">
+                    <h3 class="text-2xl font-bold text-orange-400 mb-4 text-center">
                         Notre Solution
                     </h3>
 
                     {{-- Description --}}
                     <p class="text-gray-300 text-center leading-relaxed">
-                        <span class="text-[#ffb845] font-semibold">Laser-focus sur Facebook & TikTok Ads.</span> 
+                        <span class="text-orange-400 font-semibold">Laser-focus sur Facebook & TikTok Ads.</span> 
                         Zéro service inutile, que des résultats qui se voient sur ton compte en banque.
                     </p>
 
                     {{-- Badge --}}
                     <div class="mt-6 text-center">
-                        <span class="inline-block px-4 py-2 rounded-full bg-[#ff8c00]/20 text-[#ffb845] text-sm font-semibold">
+                        <span class="inline-block px-4 py-2 rounded-full bg-[#ff8c00]/20 text-orange-400 text-sm font-semibold">
                             ⚡ Performance réelle
                         </span>
                     </div>
