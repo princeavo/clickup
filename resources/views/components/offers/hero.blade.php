@@ -71,20 +71,24 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">100+</div>
-                <div class="text-sm text-gray-400">Clients accompagnés</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">13+</div>
+                <div class="text-sm text-gray-400">E-commerces accompagnés</div>
+                <div class="text-xs text-gray-500 mt-1">Depuis 2 ans</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">24M€</div>
-                <div class="text-sm text-gray-400">CA généré</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">+1M€</div>
+                <div class="text-sm text-gray-400">De CA généré pour nos clients</div>
+                <div class="text-xs text-gray-500 mt-1">Sur 24 mois</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">92%</div>
-                <div class="text-sm text-gray-400">Satisfaction</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">+180%</div>
+                <div class="text-sm text-gray-400">De ROAS moyen</div>
+                <div class="text-xs text-gray-500 mt-1">Performance garantie</div>
             </div>
             <div class="text-center">
-                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">300K€</div>
-                <div class="text-sm text-gray-400">Budget mensuel</div>
+                <div class="text-3xl md:text-4xl font-extrabold text-orange-400 mb-2">+1100</div>
+                <div class="text-sm text-gray-400">Créatives testées</div>
+                <div class="text-xs text-gray-500 mt-1">On sait ce qui marche</div>
             </div>
         </div>
     </div>

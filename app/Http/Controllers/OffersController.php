@@ -9,8 +9,8 @@ class OffersController extends Controller
     public function index()
     {
         $hero = [
-            'title' => 'Nos Offres',
-            'subtitle' => 'Des solutions sur-mesure pour transformer ton budget pub en machine à vendre',
+            'title' => '3 offres pour scaler ta pub — du test au scaling agressif',
+            'subtitle' => 'Que tu débutes en pub payante ou que tu veuilles passer un palier, on a l\'offre qui correspond à ton niveau. Toutes incluent la méthode CREA™ et un accompagnement personnalisé.',
             'cta' => 'Réserve ton audit gratuit',
             'ctaLink' => '#contact',
         ];
@@ -19,6 +19,7 @@ class OffersController extends Controller
             [
                 'name' => 'Starter',
                 'tagline' => 'Pour démarrer avec Facebook & TikTok Ads',
+                'oldPrice' => '1 900',
                 'price' => '1 500',
                 'period' => '/mois',
                 'description' => 'Idéal pour les marques qui veulent tester les publicités Facebook & TikTok avec un accompagnement professionnel.',
@@ -36,6 +37,7 @@ class OffersController extends Controller
             [
                 'name' => 'Growth',
                 'tagline' => 'Pour scaler tes ventes rapidement',
+                'oldPrice' => '3 200',
                 'price' => '2 500',
                 'period' => '/mois',
                 'description' => 'Notre offre la plus populaire. Pour les marques prêtes à investir sérieusement dans leur croissance.',

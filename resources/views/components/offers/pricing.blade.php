@@ -1,6 +1,6 @@
 @props(['offers' => []])
 
-<section id="pricing" class="relative py-24 bg-gradient-to-b from-[#04131c] to-[#0a1f2d] overflow-hidden">
+<section id="pricing" class="relative py-24 bg-gradient-to-b from-[#0d0d0d] to-[#1a1a1a] overflow-hidden">
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#ff8c00]/10 rounded-full blur-3xl"></div>
@@ -56,12 +56,22 @@
 
                         <!-- Prix -->
                         <div class="mb-6">
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-4xl font-extrabold text-orange-400">{{ $offer['price'] }}€</span>
-                                @if($offer['period'])
-                                    <span class="text-gray-400">{{ $offer['period'] }}</span>
-                                @endif
-                            </div>
+                            @if(isset($offer['oldPrice']))
+                                <div class="flex items-baseline gap-3">
+                                    <span class="text-2xl font-bold text-gray-500 line-through">{{ $offer['oldPrice'] }}€</span>
+                                    <span class="text-4xl font-extrabold text-orange-400">{{ $offer['price'] }}€</span>
+                                    @if($offer['period'])
+                                        <span class="text-gray-400">{{ $offer['period'] }}</span>
+                                    @endif
+                                </div>
+                            @else
+                                <div class="flex items-baseline gap-2">
+                                    <span class="text-4xl font-extrabold text-orange-400">{{ $offer['price'] }}€</span>
+                                    @if($offer['period'])
+                                        <span class="text-gray-400">{{ $offer['period'] }}</span>
+                                    @endif
+                                </div>
+                            @endif
                         </div>
 
                         <!-- Description -->

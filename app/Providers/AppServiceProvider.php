@@ -121,26 +121,26 @@ class AppServiceProvider extends ServiceProvider
                 [
                     'value' => 13,
                     'suffix' => '+',
-                    'label' => 'Marques accompagnées',
-                    'precision' => 'De 15K€ à 80K€/mois',
+                    'label' => 'E-commerces accompagnés',
+                    'precision' => 'Depuis 2 ans',
                 ],
                 [
                     'value' => 1,
                     'suffix' => 'M€+',
                     'label' => 'De CA généré pour nos clients',
-                    'precision' => 'En 24 mois d\'activité',
+                    'precision' => 'Sur 24 mois',
                 ],
                 [
                     'value' => 180,
                     'suffix' => '%',
                     'label' => 'De ROAS moyen',
-                    'precision' => '1€ investi = 1,80€ de retour minimum',
+                    'precision' => 'Performance garantie',
                 ],
                 [
                     'value' => 1100,
                     'suffix' => '+',
                     'label' => 'Créatives testées',
-                    'precision' => 'On sait ce qui marche en 2025',
+                    'precision' => 'On sait ce qui marche',
                 ]
             ];
             $view->with('stats', $stats);

@@ -190,7 +190,7 @@ class SupportController extends Controller
             ],
             'process' => [
                 'headline' => "Pourquoi attendre te coûte <span class='text-orange-400'>des milliers d'euros chaque mois</span>",
-                'subtext' => "Pendant que tu hésites, tes concurrents scalent. Chaque mois sans stratégie = des milliers d'euros perdus. Nos clients qui ont attendu 6 mois nous disent tous : \"J'aurais dû commencer plus tôt\".",
+                'subtext' => "Pendant que tu hésites, tes concurrents scalent. Chaque mois sans stratégie c'est des milliers d'euros perdus",
                 'bullets' => [
                     ['type' => 'negative', 'text' => 'Chaque mois sans stratégie = 10-30K€ de CA en moins'],
                     ['type' => 'negative', 'text' => 'Tes concurrents prennent des parts de marché pendant que tu attends'],
