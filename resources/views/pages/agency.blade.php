@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Agence - ClickUp')
+@section('title', 'L\'Agence - clicup')
 
 
 @section('hero')
@@ -25,8 +25,8 @@
 
         <x-stats-section />
 
-        <x-testimonials-carousel title="Ce que nos clients disent de nous"
-            subtitle="Ce sont nos clients qui en parlent le mieux." />
+        <x-testimonials-carousel title="Ce sont nos clients qui en parlent le mieux"
+            subtitle="Des résultats concrets, des témoignages authentiques, zéro bullshit." />
 
         <x-section-call />
 

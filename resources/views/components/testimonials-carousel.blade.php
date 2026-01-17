@@ -129,7 +129,7 @@
             <!-- Controls -->
             <div class="mt-6 flex items-center justify-center gap-3">
                 <button @click="prev()" aria-label="Précédent"
-                    class="w-10 h-10 rounded-full grid place-items-center bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-white shadow-lg hover:scale-110 transition">
+                    class="w-10 h-10 rounded-full grid place-items-center bg-orange-400 text-white shadow-lg hover:scale-110 transition">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
                         <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -137,7 +137,7 @@
                 </button>
 
                 <button @click="next()" aria-label="Suivant"
-                    class="w-10 h-10 rounded-full grid place-items-center bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-white shadow-lg hover:scale-110 transition">
+                    class="w-10 h-10 rounded-full grid place-items-center bg-orange-400 text-white shadow-lg hover:scale-110 transition">
                     <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
                         <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" />
@@ -149,7 +149,7 @@
             <div class="mt-6 flex justify-center gap-2">
                 <template x-for="i in total" :key="i">
                     <button @click="goTo(i-1)" class="w-3 h-3 rounded-full transition"
-                        :class="activeIndex === (i - 1) ? 'bg-gradient-to-r from-[#ffb845] to-[#ff8c00] scale-110' :
+                        :class="activeIndex === (i - 1) ? 'bg-orange-400 scale-110' :
                             'bg-white/20 hover:bg-white/40'">
                     </button>
                 </template>

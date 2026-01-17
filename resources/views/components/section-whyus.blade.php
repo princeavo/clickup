@@ -1,7 +1,7 @@
-@props(['features'])
+@props(['title' => 'Pourquoi travailler avec nous ?', 'subtitle' => null, 'features'])
 
 <section x-data
-    class="relative w-full py-24 px-6 md:px-12 bg-gradient-to-b from-[#0a1f2d] to-[#04131c]">
+    class="relative w-full py-24 px-6 md:px-12 bg-gradient-to-b from-[#0f0f0f] to-[#050505]">
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#ff8c00]/10 rounded-full blur-3xl"></div>
@@ -16,8 +16,21 @@
                                $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
                                $el.classList.remove('opacity-100','translate-y-0')">
-            Pourquoi <span class="text-orange-400">travailler avec nous ?</span>
+            <span class="text-white">{{ $title }}</span>
         </h2>
+
+        @if($subtitle)
+            <!-- Sous-titre -->
+            <p class="text-base md:text-lg text-gray-400 max-w-3xl mx-auto text-center mb-8
+                      opacity-0 translate-y-6 transition-all duration-700 ease-out delay-200"
+               x-data
+               x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
+                                  $el.classList.add('opacity-100','translate-y-0')"
+               x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
+                                  $el.classList.remove('opacity-100','translate-y-0')">
+                {{ $subtitle }}
+            </p>
+        @endif
 
         <x-animated-highlight class="mb-16" />
 
@@ -50,7 +63,7 @@
 
                     <!-- Icône SVG -->
                     <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full 
-                                bg-gradient-to-br from-[#ffb845] to-[#ff8c00] text-white shadow-lg shadow-[#ff8c00]/50
+                                bg-orange-400 text-white shadow-lg shadow-orange-400/50
                                 transform transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                         {!! $icons[$index] !!}
                     </div>
@@ -64,12 +77,6 @@
                     <p class="text-gray-300 text-center leading-relaxed">
                         {{ $feature['description'] }}
                     </p>
-
-                    <!-- Badge numéro -->
-                    <div class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-full 
-                                bg-[#ff8c00]/20 text-orange-400 font-bold text-sm">
-                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
-                    </div>
                 </div>
             @endforeach
         </div>

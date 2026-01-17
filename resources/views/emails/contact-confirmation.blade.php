@@ -33,7 +33,7 @@ Découvrir nos services
 
 **Questions urgentes ?**  
 N'hésitez pas à nous contacter directement :  
-📧 {{ env('CONTACT_EMAIL', 'contact@clickup.com') }}  
+📧 {{ env('CONTACT_EMAIL', 'contact@clicup.com') }}  
 📱 WhatsApp : [Nous contacter](https://wa.me/votre-numero)
 
 À très bientôt,  

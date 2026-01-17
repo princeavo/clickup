@@ -11,7 +11,7 @@ class SupportController extends Controller
     {
         $testimonials = [
             [
-                'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
+                'quote' => "J’ai le plaisir de collaborer avec clicup dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                 'name'  => 'Elise Roux',
                 'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                 'rating' => 5,
@@ -39,7 +39,7 @@ class SupportController extends Controller
                 'avatar' => null,
             ],
             [
-                'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
+                'quote' => "J’ai le plaisir de collaborer avec clicup dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                 'name'  => 'Elise Roux',
                 'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                 'rating' => 5,
@@ -72,7 +72,7 @@ class SupportController extends Controller
             'title' => "En 2025, la publicité n’est plus une option, c’est ta survie.",
             'subtitle' => "Tes futurs clients dépensent des milliards chaque année sur Facebook & TikTok.
                        Sans stratégie claire, ton produit reste invisible.
-                       Notre process cyclique ClickUp™ te permet d’avoir un flux continu de ventes, sans hasard.",
+                       Notre process cyclique clicup™ te permet d’avoir un flux continu de ventes, sans hasard.",
             'cta' => "Réserve ton appel découverte",
         ];
 
@@ -123,78 +123,84 @@ class SupportController extends Controller
 
         return view('pages.support', [
             'section' => [
-                'title' => "L’accompagnement qui transforme ton budget pub en une machine à cash.",
-                'subtitle' => "Avec notre méthode CREA™, on t’aide à installer un système publicitaire rentable et prévisible sur Facebook & TikTok. Ton business, notre obsession.",
-                'button_text' => "Réserve ton appel découverte",
+                'title' => "L'accompagnement complet pour scaler ta marque <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]'>de 15K à 100K€/mois</span>",
+                'subtitle' => "On installe un système d'acquisition prévisible pour ta marque. Fini les montagnes russes bienvenue dans la croissance stable et rentable.",
+                'button_text' => "Réserve ton audit gratuit (30 min)",
                 'button_link' => url('contact'),
                 'image' => Storage::disk('public')->url('accompagnements/hero.png')
             ],
             'whyUs' => [
-                'title' => "Pourquoi travailler avec nous ?",
+                'title' => "3 raisons de choisir ClicUP plutôt qu'une autre agence",
+                'subtitle' => "On ne promet pas la lune. On livre des résultats mesurables, un suivi béton, et une obsession : faire scaler ton CA sans exploser ton ROAS.",
                 'features' => [
                     [
                         'image' => Storage::disk('public')->url('accompagnements/feat1.png'),
-                        'title' => "Accompagnement stratégique",
-                        'description' => "On ne se contente pas de lancer des pubs. On construit une stratégie claire adaptée à ton marché, ton produit et ton budget, pour que tes ventes explosent sans te noyer dans la complexité.",
+                        'title' => "Un stratège dédié qui connaît ton business sur le bout des doigts",
+                        'description' => "Un interlocuteur unique qui suit ton business semaine après semaine. Point hebdo par appel, dashboard temps réel, WhatsApp direct. Résultat : quelqu'un qui comprend tes enjeux, répond vite, et prend les bonnes décisions.",
                     ],
                     [
                         'image' => Storage::disk('public')->url('accompagnements/feat2.png'),
-                        'title' => "Objectifs = Rentabilité",
-                        'description' => "Ton objectif n’est pas d’avoir des clics, mais du cash. Notre mission : transformer chaque euro investi en retour concret et mesurable.",
+                        'title' => "On optimise pour le ROAS, pas pour les likes",
+                        'description' => "Chaque euro dépensé est tracké. Chaque campagne est analysée. Si ça ne rapporte pas +180% de ROAS minimum, on coupe ou on ajuste. Résultat : ton budget pub devient un investissement rentable, pas un gouffre financier.",
                     ],
                     [
                         'image' => Storage::disk('public')->url('accompagnements/feat3.png'),
-                        'title' => "Méthode CREA = Résultats prévisibles",
-                        'description' => "Notre méthode CREA™ combine psychologie, storytelling et data. Résultat : des publicités qui accrochent, qui vendent, et un système publicitaire qui tourne comme une machine.",
+                        'title' => "Fini les montagnes russes, bienvenue dans la stabilité",
+                        'description' => "Grâce à la méthode CREA™, on élimine l'aléatoire. Tu sais combien investir pour générer X€ de CA. Tu peux planifier ta croissance sur 3, 6, 12 mois. Résultat : tu passes de \"j'espère que ça marche\" à \"je sais que ça marche\".",
                     ],
                 ],
             ],
             'methodology' => [
-                'title' => 'Notre méthodologie en 4 temps',
-                'subtitle' => 'Un accompagnement complet, sur-mesure, pour gérer et faire évoluer votre compte Amazon Ads.',
+                'title' => 'Comment on travaille : <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]">la méthode CREA™ en 4 phases</span>',
+                'subtitle' => 'Un processus cyclique et éprouvé pour transformer ton budget pub en machine à ventes prévisible. Pas de one-shot : on itère, on optimise, on scale.',
                 'steps' => [
                     [
                         'number' => 1,
-                        'title' => 'Audit',
+                        'title' => 'Audit & Clarté',
                         'week' => 'Semaine 1',
                         'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684996da176738787dd9e4b2_refonte.webp",
-                        'content' => "Analyse initiale de votre compte pour identifier les points faibles et les opportunités. Nous clarifions vos objectifs et établissons une feuille de route claire.",
-                        'tags' => ['Analyse compte', 'Objectifs', 'Feuille de route'],
+                        'content' => "Audit complet de ton compte publicitaire et tunnel de vente. Identification des fuites budgétaires et opportunités. Clarification du positionnement et segments cibles. Livrables : audit PDF, feuille de route et 3 quick wins.",
+                        'tags' => ['Analyse de compte', 'Objectifs clairs', 'Feuille de route'],
                     ],
                     [
                         'number' => 2,
-                        'title' => 'Refonte',
+                        'title' => 'Refonte & Setup',
                         'week' => 'Semaine 2',
                         'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684995ef6ddb2e1ba7e9bddd_audit.webp",
-                        'content' => "On clarifie les objectifs, on priorise les bons ASINs, on restructure et on réactive les leviers efficaces : sponsored products, sponsored brands, sponsored display.",
-                        'tags' => ['Campagnes', 'Produits', 'Tendances'],
+                        'content' => "Restructuration complète du compte. Installation des pixels Facebook & TikTok et tracking avancé. Création des audiences custom et lookalike. Production de 10-15 créatives. Livrables : compte prêt à scaler et créatives testables.",
+                        'tags' => ['Restructuration', 'Tracking', 'Audiences', 'Créatives'],
                     ],
                     [
                         'number' => 3,
-                        'title' => 'Pilotage',
-                        'week' => 'Semaine 3',
+                        'title' => 'Pilotage & Optimisation',
+                        'content' => "Lancement avec tests A/B continus. Suivi quotidien : ajustements budget, optimisation enchères, arrêt des losers. 10-15 nouvelles créatives/mois. Scaling progressif et point hebdo. Résultats : campagnes 24/7 et croissance stable.",
+                        'week' => 'Semaine 3-8+',
+                        'tags' => ['Suivi quotidien', 'A/B Testing', 'Optimisation', 'Scaling'],
                         'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684997174a9d876870fae016_pilotage.webp",
-                        'content' => "Mise en place d’un suivi hebdo : ajustement des campagnes, pilotage budgétaire et tests A/B continus pour améliorer la performance.",
-                        'tags' => ['Suivi budget', 'A/B Testing', 'Optimisation'],
                     ],
                     [
                         'number' => 4,
-                        'title' => 'Reporting',
-                        'week' => 'Semaine 4',
+                        'title' => 'Reporting & Stratégie',
+                        'week' => 'Mensuel',
                         'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6849975c03d8f92b68d3f0b2_reporting.webp",
-                        'content' => "Un reporting clair et détaillé, avec des insights exploitables pour ajuster votre stratégie et assurer une croissance continue.",
-                        'tags' => ['Tableau de bord', 'Insights', 'Croissance'],
+                        'content' => "Analyse mensuelle des performances. Identification des tendances et opportunités. Ajustement de la stratégie (budgets, audiences, créa). Recommandations tunnel de vente. Livrables : rapport détaillé, roadmap 30 jours et insights stratégiques.",
+                        'tags' => ['Tableau de bord', 'Insights', 'Stratégie', 'Croissance continue'],
                     ],
                 ],
             ],
             'process' => [
-                'headline' => "En 2025, la publicité n’est plus une option, c’est ta survie.",
-                'subtext' => "Tes futurs clients dépensent des milliards chaque année sur Facebook & TikTok.
-                      Sans stratégie claire, ton produit reste invisible.
-                      Notre process cyclique ClickUp™ te permet d’avoir un flux continu de ventes, sans hasard.",
+                'headline' => "Pourquoi attendre te coûte <span class='text-orange-400'>des milliers d'euros chaque mois</span>",
+                'subtext' => "Pendant que tu hésites, tes concurrents scalent. Chaque mois sans stratégie = des milliers d'euros perdus. Nos clients qui ont attendu 6 mois nous disent tous : \"J'aurais dû commencer plus tôt\".",
+                'bullets' => [
+                    ['type' => 'negative', 'text' => 'Chaque mois sans stratégie = 10-30K€ de CA en moins'],
+                    ['type' => 'negative', 'text' => 'Tes concurrents prennent des parts de marché pendant que tu attends'],
+                    ['type' => 'highlight', 'text' => 'Nos clients qui ont démarré il y a 6 mois ont x2 leur CA'],
+                    ['type' => 'highlight', 'text' => 'Le meilleur moment pour planter un arbre ? Il y a 10 ans. Le 2ème meilleur moment ? Aujourd\'hui.'],
+                ],
                 'cta' => [
-                    'text' => 'Réserve ton appel découverte',
-                    'link' => '/contact'
+                    'text' => 'Réserve ton appel découverte maintenant',
+                    'link' => '/contact',
+                    'subtext' => '30 minutes pour voir si on peut t\'aider. Aucune obligation. Audit offert.',
                 ],
                 'steps' => [
                     [

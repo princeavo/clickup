@@ -1,6 +1,6 @@
 @props(['title', 'subtitle', 'steps'])
 
-<section class="w-full py-24 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#0a1f2d] to-[#04131c] text-gray-100 relative overflow-hidden"
+<section class="w-full py-24 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#1a1a1a] to-[#0d0d0d] text-gray-100 relative overflow-hidden"
     x-data="{
         activeTab: 0,
         steps: @js($steps),
@@ -27,7 +27,7 @@
                    opacity-0 translate-y-6 transition-all duration-700 ease-out"
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
                                $el.classList.add('opacity-100','translate-y-0')">
-            {{ $title }}
+            {!! $title !!}
         </h2>
         
         <x-animated-highlight />
@@ -133,5 +133,14 @@
                     'bg-gray-600 hover:bg-gray-500'">
             </button>
         </template>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 opacity-0 translate-y-6 transition-all duration-700 ease-out"
+         x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
+                            $el.classList.add('opacity-100','translate-y-0')">
+        <x-button variant="primary" href="#contact">
+            Je veux cette méthode
+        </x-button>
     </div>
 </section>

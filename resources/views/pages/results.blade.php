@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Résultats - ClickUp')
+@section('title', 'Résultats - clicup')
 
 @section('content')
     <main>

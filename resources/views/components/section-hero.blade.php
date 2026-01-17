@@ -1,4 +1,4 @@
-@props(['title', 'buttonText', 'buttonLink', 'image'])
+@props(['title', 'subtitle', 'buttonText', 'buttonLink', 'image'])
 
 <section x-data="{ visible: false }" x-intersect:enter="visible = true" x-intersect:leave="visible = false"
     class="relative w-full min-h-screen overflow-hidden flex items-center bg-cover bg-center bg-no-repeat min-h[calc(100vh-80px)] pt-28 md:pt-32">
@@ -11,25 +11,21 @@
             <!-- Titre -->
             <h1 :class="visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
                 class="transition-all duration-700 ease-out text-3xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">
-                {{ $title }}
+                {!! $title !!}
             </h1>
 
             <!-- Sous-titre avec CREA en couleur -->
             <p :class="visible ? 'opacity-100 translate-y-0 delay-300' : 'opacity-0 translate-y-8 delay-300'"
                 class="transition-all duration-700 ease-out text-lg md:text-xl text-gray-300 leading-relaxed">
-                Avec notre <span class="text-orange-400 font-semibold">méthode CREA™</span>,
-                on t’aide à installer un système publicitaire rentable et prévisible sur Facebook & TikTok.
-                Ton business, notre obsession.
-            </p>
+                {!! $subtitle !!}
 
+            </p>
             <!-- Bouton -->
             <div :class="visible ? 'opacity-100 scale-100 delay-500' : 'opacity-0 scale-75 delay-500'"
                 class="transition-all duration-700 ease-out">
-                <a href="{{ $buttonLink }}"
-                    class="btn-3d inline-block px-8 py-4 rounded-full font-semibold text-white
-                          bg-gradient-to-r from-orange-400 to-orange-500 shadow-lg relative overflow-hidden group">
-                    <span class="relative z-10">{{ $buttonText }}</span>
-                </a>
+                <x-button variant="primary" :href="$buttonLink">
+                    {{ $buttonText }}
+                </x-button>
             </div>
         </div>
 

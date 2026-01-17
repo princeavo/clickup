@@ -1,6 +1,6 @@
 @props(['intro', 'steps'])
 
-<section class="w-full py-24 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#04131c] to-[#0a1f2d] text-gray-100 relative overflow-hidden">
+<section class="w-full py-24 px-6 md:px-12 lg:px-20 bg-gradient-to-b from-[#0d0d0d] to-[#1a1a1a] text-gray-100 relative overflow-hidden">
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#ff8c00]/10 rounded-full blur-3xl"></div>
@@ -15,7 +15,7 @@
                                       $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
                                $el.classList.remove('opacity-100','translate-y-0')">
-            En 2025, <span class="text-orange-400">la publicité n'est plus une option</span>, c'est ta survie.
+            {!! $intro['headline'] !!}
         </h2>
         
         <x-animated-highlight />
@@ -26,18 +26,53 @@
                                       $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
                                $el.classList.remove('opacity-100','translate-y-0')">
-            {{ $intro['subtitle'] }}
+            {{ $intro['subtext'] }}
         </p>
-        
-        <div class="mt-8 opacity-0 translate-y-6 transition-all duration-700 ease-out delay-300"
-            x-data x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
-                                     $el.classList.add('opacity-100','translate-y-0')"
-            x-intersect:leave="$el.classList.add('opacity-0','translate-y-6');
-                              $el.classList.remove('opacity-100','translate-y-0')">
-            <x-button href="#contact" variant="primary" class="text-lg">
-                {{ $intro['cta'] }}
-            </x-button>
-        </div>
+
+        @if(isset($intro['bullets']))
+            <!-- Bullet points -->
+            <div class="mt-10 max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+                @foreach($intro['bullets'] as $i => $bullet)
+                    @php
+                        $bgClass = match($bullet['type']) {
+                            'negative' => 'bg-red-500/10 border border-red-500/30',
+                            'highlight' => 'bg-orange-400/10 border border-orange-400/30',
+                            default => 'bg-green-500/10 border border-green-500/30'
+                        };
+                    @endphp
+                    <div class="flex items-start gap-4 p-4 rounded-xl transition-all duration-500
+                                {{ $bgClass }}
+                                opacity-0 translate-y-6"
+                         style="transition-delay: {{ ($i + 3) * 100 }}ms"
+                         x-data
+                         x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
+                                            $el.classList.add('opacity-100','translate-y-0')">
+                        @if($bullet['type'] === 'negative')
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-red-500 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-200 text-left leading-relaxed">{{ $bullet['text'] }}</p>
+                        @elseif($bullet['type'] === 'highlight')
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-orange-400 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-200 text-left leading-relaxed">{{ $bullet['text'] }}</p>
+                        @else
+                            <div class="flex-shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <p class="text-gray-200 text-left leading-relaxed">{{ $bullet['text'] }}</p>
+                        @endif
+                    </div>
+                @endforeach
+            </div>
+        @endif
     </div>
 
     <!-- Steps avec icônes SVG -->
@@ -63,16 +98,8 @@
                  x-intersect:leave="$el.classList.add('opacity-0','translate-y-10');
                                     $el.classList.remove('opacity-100','translate-y-0')">
 
-                <!-- Numéro -->
-                <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 w-12 h-12 
-                            flex items-center justify-center rounded-full 
-                            bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black font-bold text-lg 
-                            shadow-lg shadow-[#ff8c00]/50">
-                    {{ $step['number'] }}
-                </div>
-
                 <!-- Icône SVG -->
-                <div class="flex justify-center mb-6 mt-6">
+                <div class="flex justify-center mb-6">
                     <div class="w-20 h-20 flex items-center justify-center rounded-full 
                                 bg-gradient-to-br from-[#ff8c00]/20 to-[#ffb845]/20 text-orange-400
                                 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
@@ -87,7 +114,7 @@
 
                 <!-- Contenu -->
                 <p class="text-gray-300 text-center leading-relaxed">
-                    {{ $step['content'] }}
+                    {{ $step['description'] ?? $step['content'] ?? '' }}
                 </p>
 
                 <!-- Ligne de connexion (sauf pour le dernier) -->
@@ -96,5 +123,17 @@
                 @endif
             </div>
         @endforeach
+    </div>
+
+    <!-- CTA en bas -->
+    <div class="text-center mt-12 opacity-0 translate-y-6 transition-all duration-700 ease-out"
+        x-data x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
+                                 $el.classList.add('opacity-100','translate-y-0')">
+        <x-button href="{{ $intro['cta']['link'] }}" variant="primary" class="text-lg px-10 py-4">
+            {{ $intro['cta']['text'] }}
+        </x-button>
+        @if(isset($intro['cta']['subtext']))
+            <p class="text-sm text-gray-400 mt-3">{{ $intro['cta']['subtext'] }}</p>
+        @endif
     </div>
 </section>

@@ -11,8 +11,8 @@
 
     $variants = [
         'primary' => "text-[#111111] bg-gradient-to-r from-[#ffb845] to-[#ff8c00] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30",
-        'outline' => "border-2 border-[#ffb845] text-white bg-transparent hover:bg-gradient-to-r hover:from-[#ffb845] hover:to-[#ff8c00] hover:text-[#111111] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30",
-        'ebook'   => "border-2 border-[#ffb845] text-white bg-transparent hover:bg-gradient-to-r hover:from-[#ffb845] hover:to-[#ff8c00] hover:text-[#111111] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30",
+        'outline' => "border-2 border-orange-400 text-white bg-transparent hover:bg-orange-400 hover:text-[#111111] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30",
+        'ebook'   => "border-2 border-orange-400 text-white bg-transparent hover:bg-orange-400 hover:text-black hover:scale-105 hover:shadow-lg hover:shadow-orange-400/50",
         'neon'    => "text-[#111111] bg-gradient-to-r from-[#ffb845] to-[#ff8c00] hover:scale-105 hover:shadow-lg hover:shadow-orange-500/30",
     ];
 

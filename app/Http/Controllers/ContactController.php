@@ -32,7 +32,7 @@ class ContactController extends Controller
             Contact::create($validated);
             
             // 2. Envoyer l'email de notification
-            $recipientEmail = env('CONTACT_EMAIL', 'contact@clickup.com');
+            $recipientEmail = env('CONTACT_EMAIL', 'contact@clicup.com');
             Mail::to($recipientEmail)->send(new ContactFormMail($validated));
             
             // 3. Envoyer un email de confirmation au client (optionnel)

@@ -62,7 +62,7 @@ class HomeController extends Controller
 
         $services = [
             [
-                'name' => 'Gestion complète Facebook & TikTok Ads',
+                'name' => 'Social Adds',
                 'price' => 'À partir de 2999€/mois',
                 'content' => [
                     [
@@ -128,30 +128,34 @@ class HomeController extends Controller
 
         $stats = [
             [
-                'value' => 100,
+                'value' => 13,
                 'suffix' => '+',
-                'label' => 'Clients accompagnés',
+                'label' => 'E-commerces accompagnés',
+                'precision' => 'De 15K€ à 80K€/mois',
             ],
             [
-                'value' => 24,
+                'value' => 1,
                 'suffix' => 'M€',
-                'label' => 'de CA généré pour nos clients',
+                'label' => 'De CA généré pour nos clients',
+                'precision' => 'En 24 mois d\'activité',
             ],
             [
-                'value' => 92,
+                'value' => 180,
                 'suffix' => '%',
-                'label' => 'de satisfaction clients',
+                'label' => 'De ROAS moyen',
+                'precision' => '1€ investi = 1,80€ de retour minimum',
             ],
             [
-                'value' => 300,
-                'suffix' => 'K€',
-                'label' => 'gérés mensuellement',
+                'value' => 1100,
+                'suffix' => '+',
+                'label' => 'Créatives testées',
+                'precision' => 'On sait ce qui marche en 2025',
             ]
         ];
 
         $testimonials = [
             [
-                'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
+                'quote' => "J’ai le plaisir de collaborer avec clicup dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                 'name'  => 'Elise Roux',
                 'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                 'rating' => 5,
@@ -179,7 +183,7 @@ class HomeController extends Controller
                 'avatar' => null,
             ],
             [
-                'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
+                'quote' => "J’ai le plaisir de collaborer avec clicup dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                 'name'  => 'Elise Roux',
                 'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                 'rating' => 5,
@@ -274,7 +278,7 @@ class HomeController extends Controller
             'brands' => $brands,
             'hero' => [
                 'title' => "On transforme ton budget pub en ventes prévisibles (pas en likes inutiles)",
-                'subtitle' => "ClickUp est l’agence spécialisée Facebook & TikTok Ads qui aide les marques e-commerce (15–50k€/mois) à scaler x2/x3 et stabiliser leurs ventes en 61 jours grâce à la méthode CREA™",
+                'subtitle' => "Clicup est l’agence spécialisée Facebook & TikTok Ads qui aide les marques e-commerce (15–50k€/mois) à scaler x2/x3 et stabiliser leurs ventes en 61 jours grâce à la méthode CREA™",
                 'cta' => "Réserve ton audit gratuit",
                 'background' => "/images/bg-hero.jpg"
             ],

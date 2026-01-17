@@ -30,11 +30,11 @@
         </p>
     </div>
 
-    <div class="relative max-w-6xl mx-auto">
+    <div class="relative max-w-7xl mx-auto">
         <!-- Grille (≤ 3 ebooks) -->
-        <div x-show="!isCarousel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div x-show="!isCarousel" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             @foreach ($ebooks as $i => $ebook)
-                <div class="opacity-0 translate-y-10 transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
+                <div class="opacity-0 translate-y-10 transition-all duration-700 ease-out"
                     style="transition-delay: {{ $i * 150 }}ms" x-data
                     x-intersect:enter="$el.classList.remove('opacity-0','translate-y-10'); $el.classList.add('opacity-100','translate-y-0')"
                     x-intersect:leave="$el.classList.add('opacity-0','translate-y-10'); $el.classList.remove('opacity-100','translate-y-0')">
@@ -45,10 +45,10 @@
 
         <!-- Carousel (> 3 ebooks) -->
         <div x-show="isCarousel" class="relative overflow-hidden p-3">
-            <div x-ref="track" class="flex transition-transform duration-700 ease-in-out py-8"
+            <div x-ref="track" class="flex transition-transform duration-700 ease-in-out py-8 gap-8"
                 :style="`transform: translateX(-${offset}px)`" @transitionend="onTransitionEnd">
                 @foreach ($ebooks as $i => $ebook)
-                    <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 px-4 opacity-0 translate-y-10 transition-all duration-700 ease-out"
+                    <div class="w-full sm:w-1/2 lg:w-1/3 flex-shrink-0 opacity-0 translate-y-10 transition-all duration-700 ease-out"
                         style="transition-delay: {{ $i * 150 }}ms" x-data
                         x-intersect:enter="$el.classList.remove('opacity-0','translate-y-10'); $el.classList.add('opacity-100','translate-y-0')"
                         x-intersect:leave="$el.classList.add('opacity-0','translate-y-10'); $el.classList.remove('opacity-100','translate-y-0')">
@@ -59,19 +59,27 @@
 
             <!-- Flèches -->
             <button @click="prev" aria-label="Précédent"
-                class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-800/60 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition"
-                :class="isAnimating ? 'pointer-events-none opacity-50' : ''">←</button>
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-orange-400 hover:bg-orange-500 text-white p-3 rounded-full shadow-lg transition hover:scale-110"
+                :class="isAnimating ? 'pointer-events-none opacity-50' : ''">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
 
             <button @click="next" aria-label="Suivant"
-                class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-800/60 hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition"
-                :class="isAnimating ? 'pointer-events-none opacity-50' : ''">→</button>
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-orange-400 hover:bg-orange-500 text-white p-3 rounded-full shadow-lg transition hover:scale-110"
+                :class="isAnimating ? 'pointer-events-none opacity-50' : ''">
+                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
 
         <!-- Bullets -->
-        <div x-show="isCarousel" class="mt-6 flex justify-center space-x-2">
+        <div x-show="isCarousel" class="mt-8 flex justify-center space-x-2">
             @foreach ($ebooks as $ebook)
                 <button @click="goTo({{ $loop->index }})" class="w-3 h-3 rounded-full transition-all"
-                    :class="active === {{ $loop->index }} ? 'bg-orange-500 scale-125' : 'bg-gray-500'"
+                    :class="active === {{ $loop->index }} ? 'bg-orange-400 scale-125' : 'bg-gray-500 hover:bg-gray-400'"
                     :aria-current="active === {{ $loop->index }} ? 'true' : 'false'"
                     aria-label="Aller à la slide {{ $loop->iteration }}"></button>
             @endforeach

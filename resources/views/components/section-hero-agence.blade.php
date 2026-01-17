@@ -1,6 +1,6 @@
 @props([
     'badge' => null,
-    'buttonText' => 'Obtenir ton rdv (GRATUIT)',
+    'buttonText' => 'Découvre notre méthode',
     'buttonLink' => '#rendezvous',
     'image' => null,
     'imageAlt' => 'Illustration',
@@ -36,8 +36,8 @@
             @endif
 
             <h1 class="mt-4 text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                ClickUp — L’agence Facebook & TikTok Ads obsédée par une seule chose :
-                <span class="text-orange-400">tes ventes</span>.
+                ClicUP : L'agence Social Ads qui transforme ton budget pub en
+                <span class="text-orange-400">machine à ventes</span>
             </h1>
 
 

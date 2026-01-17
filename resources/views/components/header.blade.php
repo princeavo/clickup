@@ -7,7 +7,7 @@
         ['label' => 'Nos Offres',    'href' => route('offers'),   'active' => request()->routeIs('offers')],
     ],
     'logo' => asset('logo-header.png'),
-    'brand' => 'ClickUp',
+    'brand' => 'clicup',
     'ctaLabel' => 'Audit offert',
     'ctaHref' => '#contact',
     'bgImage' => asset('bg-header.jpg'),

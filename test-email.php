@@ -15,7 +15,7 @@ use App\Mail\ContactFormMail;
 use App\Mail\ContactConfirmationMail;
 use Illuminate\Support\Facades\Mail;
 
-echo "🧪 Test d'envoi d'emails ClickUp\n";
+echo "🧪 Test d'envoi d'emails clicup\n";
 echo "================================\n\n";
 
 // Données de test
@@ -30,11 +30,11 @@ $testData = [
 echo "📧 Configuration actuelle:\n";
 echo "   MAIL_MAILER: " . env('MAIL_MAILER', 'non défini') . "\n";
 echo "   MAIL_FROM: " . env('MAIL_FROM_ADDRESS', 'non défini') . "\n";
-echo "   CONTACT_EMAIL: " . env('CONTACT_EMAIL', 'contact@clickup.com') . "\n\n";
+echo "   CONTACT_EMAIL: " . env('CONTACT_EMAIL', 'contact@clicup.com') . "\n\n";
 
 try {
     echo "📤 Envoi de l'email de notification à l'équipe...\n";
-    Mail::to(env('CONTACT_EMAIL', 'contact@clickup.com'))
+    Mail::to(env('CONTACT_EMAIL', 'contact@clicup.com'))
         ->send(new ContactFormMail($testData));
     echo "   ✅ Email de notification envoyé avec succès!\n\n";
 

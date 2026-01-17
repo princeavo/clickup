@@ -1,6 +1,6 @@
 @props(['services'])
 
-<section class="relative w-full py-20 bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden">
+<section class="relative w-full py-20 bg-black overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center relative z-10">
 
         <!-- Titre -->
@@ -116,10 +116,10 @@
 
     <!-- Arrière-plan décoratif -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-        <div class="absolute -top-40 -left-40 w-96 h-96 bg-[#ff8c00]/20 rounded-full blur-3xl"></div>
-        <div class="absolute top-0 right-0 w-72 h-72 bg-[#ffb845]/20 rounded-full blur-2xl"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-orange-400/20 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 right-0 w-72 h-72 bg-orange-400/20 rounded-full blur-2xl"></div>
         <div
-            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#ff8c00]/10 rounded-full blur-3xl">
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-400/10 rounded-full blur-3xl">
         </div>
     </div>
 </section>

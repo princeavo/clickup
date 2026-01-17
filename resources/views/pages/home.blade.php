@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil - ClickUp')
+@section('title', 'Accueil - clicup')
 
 @section('hero')
     <x-hero titlePart1="Transforme tes ventes de " titlePart2="montagnes russes" titlePart3="en machine" titlePart4=" à cash prévisible"
@@ -31,7 +31,7 @@
 
         <x-services-tabs :services="$services" />
 
-        <x-stats-section />
+        <x-stats-section :stats="$stats" />
 
         <x-testimonials-carousel />
 

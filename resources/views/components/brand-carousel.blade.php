@@ -5,6 +5,7 @@
     'pauseOnHover' => false,
     'gapClass' => 'gap-12 sm:gap-16',
     'title' => 'Plus de <span class="text-orange-400 font-bold">50 marques accompagnées</span>',
+    'subtitle' => null,
     'threshold' => 10,
 ])
 
@@ -19,6 +20,14 @@
             :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
             {!! $title !!}
         </h2>
+
+        @if($subtitle)
+            <!-- Sous-titre -->
+            <p class="text-base md:text-lg text-gray-400 max-w-3xl mx-auto mb-8 transition-all duration-700 delay-200"
+               :class="shown ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'">
+                {{ $subtitle }}
+            </p>
+        @endif
         {{--
         <!-- Ligne décorative -->
         <div class="w-20 h-[2px] mx-auto bg-orange-500 mb-12 transition-all duration-700"

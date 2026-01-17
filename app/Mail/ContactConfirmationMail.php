@@ -29,7 +29,7 @@ class ContactConfirmationMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: '✅ Nous avons bien reçu votre message - ClickUp',
+            subject: '✅ Nous avons bien reçu votre message - clicup',
         );
     }
 

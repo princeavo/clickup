@@ -13,11 +13,19 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <span class="text-[#ff8c00]">Nos résultats</span>
-            <span class="text-white">parlent plus fort que nos promesses</span>
+            <span class="text-white">Les chiffres qui prouvent </span>
+            <span class="text-orange-400">qu'on livre ce qu'on promet</span>
         </h2>
 
         <x-animated-highlight />
+
+        <!-- Sous-titre -->
+        <p class="text-gray-300 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mt-6 opacity-0 translate-y-6 transition-all duration-700 ease-out delay-200"
+            x-data
+            x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
+            x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
+            Pas de bullshit, que des données vérifiables. Voici ce qu'on a accompli avec nos 13 clients sur les 24 derniers mois.
+        </p>
 
         <!-- Stats -->
         <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -37,7 +45,7 @@
 
                     <div class="transform {{ $offset }}">
                         <!-- Valeur -->
-                        <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-2" x-data="{ count: 0 }"
+                        <h3 class="text-4xl md:text-5xl font-extrabold text-orange-400 mb-2" x-data="{ count: 0 }"
                             @start-count.window="
                                 let final={{ $stat['value'] }};
                                 let step = final/50;
@@ -47,13 +55,20 @@
                                     if(i>=50){ count = final; clearInterval(interval); }
                                     i++;
                                 },40)">
-                            +<span x-text="count"></span>{{ $stat['suffix'] }}
+                            <span x-text="count"></span>{{ $stat['suffix'] }}
                         </h3>
 
                         <!-- Label -->
-                        <p class="text-gray-300 text-base">
+                        <p class="text-white text-base mb-3 font-semibold">
                             {{ $stat['label'] }}
                         </p>
+
+                        <!-- Précision (sous-texte) -->
+                        @if(isset($stat['precision']))
+                            <p class="text-gray-400 text-sm italic">
+                                {{ $stat['precision'] }}
+                            </p>
+                        @endif
                     </div>
                 </div>
             @endforeach

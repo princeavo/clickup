@@ -24,10 +24,10 @@ class AppServiceProvider extends ServiceProvider
         View::composer('layouts.app', function ($view) {
             $footer = [
                 'logo' => asset('logo-footer.png'),
-                'about' => "ClickUp est l’agence spécialisée Facebook & TikTok Ads qui transforme ton budget pub en ventes prévisibles.",
+                'about' => "Clicup est l’agence spécialisée Facebook & TikTok Ads qui transforme ton budget pub en ventes prévisibles.",
                 'links' => [
                     [
-                        'title' => 'Agence',
+                        'title' => 'L\'Agence',
                         'items' => [
                             ['label' => 'À propos', 'url' => '/about'],
                             ['label' => 'Notre équipe', 'url' => '/team'],
@@ -56,7 +56,7 @@ class AppServiceProvider extends ServiceProvider
                     ['icon' => 'linkedin', 'url' => 'https://linkedin.com'],
                     ['icon' => 'tiktok', 'url' => 'https://tiktok.com'],
                 ],
-                'copyright' => "© " . date('Y') . " ClickUp. Tous droits réservés."
+                'copyright' => "© " . date('Y') . " clicup. Tous droits réservés."
             ];
             $view->with('footer', $footer);
         });
@@ -71,7 +71,8 @@ class AppServiceProvider extends ServiceProvider
                 ['name' => 'Nom5', 'logo' => 'brands/logo_05.png'],
             ];
             $view->with('brands', $brands);
-            $view->with('title', 'Plus de <span class="text-orange-400 font-bold">80 marques accompagnées</span>');
+            $view->with('title', 'Ils nous font confiance');
+            $view->with('subtitle', '+13 e-commerces accompagnés, +1M€ de CA généré, +180% de ROAS moyen. Nos clients ne sont pas des chiffres ce sont des partenaires qu\'on fait grandir.');
             $view->with('speed', 100);
             $view->with('fade', true);
             $view->with('pauseOnHover', true);
@@ -83,53 +84,31 @@ class AppServiceProvider extends ServiceProvider
             $ebooks = [
                 [
                     'title' => 'Facebook Ads Mastery',
-                    'subtitle' => 'Le GUIDE pratique pour maîtriser la publicité Facebook de A à Z',
-                    'image' => 'https://img.freepik.com/vecteurs-premium/telechargez-livre-e-book-marketing-content-marketing-ebook-telecharger-ordinateur-portable-illustration_100456-611.jpg?semt=ais_hybrid&w=740&q=80',
+                    'subtitle' => 'Le guide complet (47 pages) : du setup du pixel au scaling à 10K€/jour.',
+                    'image' => asset('images/ebooks/facebook-ads-mastery-2025.png'),
                     'link'  => '#',
-                    'cta'   => 'Obtenir',
+                    'cta'   => 'Télécharger gratuitement',
                 ],
                 [
-                    'title' => 'Vendre sans Efforts',
-                    'subtitle' => 'Apprends à créer un système automatisé qui vend pendant ton sommeil',
-                    'image' => 'https://www.investintech.com/resources/blog/wp-content/uploads/2013/07/PDF-eBook-reading.jpg',
+                    'title' => 'Vendre Sans Effort',
+                    'subtitle' => 'Crée un funnel publicitaire qui tourne 24/7 et génère des ventes pendant que tu dors.',
+                    'image' => asset('images/ebooks/vendre-en-dormant.png'),
                     'link'  => '#',
-                    'cta'   => 'Obtenir',
+                    'cta'   => 'Télécharger gratuitement',
                 ],
                 [
-                    'title' => 'Zéro à Millions',
-                    'subtitle' => 'Attire des prospects et transforme-les en clients grâce à Facebook Ads',
-                    'image' => 'https://www.thebookedition.com/img/cms/CMS/publier-ebook.jpg',
+                    'title' => 'Zéro A Million',
+                    'subtitle' => 'Passe de 50% à 400% de ROAS : audiences, créatives et tunnel de vente.',
+                    'image' => asset('images/ebooks/roas-x4.png'),
                     'link'  => '#',
-                    'cta'   => 'Obtenir',
-                ],
-                [
-                    'title' => 'Facebook Ads Mastery',
-                    'subtitle' => 'Le GUIDE pratique pour maîtriser la publicité Facebook de A à Z',
-                    'image' => 'https://www.redacteur.com/blog/wp-content/uploads/sites/6/2021/11/ebook.jpg',
-                    'link'  => '#',
-                    'cta'   => 'Obtenir',
-                ],
-                // /images/ebooks/vendre-sans-efforts.png
-                [
-                    'title' => 'Vendre sans Efforts',
-                    'subtitle' => 'Apprends à créer un système automatisé qui vend pendant ton sommeil',
-                    'image' => 'https://www.aproposdecriture.com/wp-content/uploads/2016/06/free-ebook.jpg',
-                    'link'  => '#',
-                    'cta'   => 'Obtenir',
-                ],
-                [
-                    'title' => 'Zéro à Millions',
-                    'subtitle' => 'Attire des prospects et transforme-les en clients grâce à Facebook Ads',
-                    'image' => 'https://www.thebookedition.com/img/cms/CMS/publier-ebook.jpg',
-                    'link'  => '#',
-                    'cta'   => 'Obtenir',
+                    'cta'   => 'Télécharger gratuitement',
                 ],
             ];
 
             $section = [
-                'title_colored' => 'Ton guide gratuit',
-                'title_white' => 'pour lancer des pubs rentables dès aujourd’hui',
-                'description' => 'On t’offre un e-book qui révèle nos meilleures stratégies Facebook & TikTok Ads. Tu peux l’appliquer dès demain, sans engagement.',
+                'title_colored' => '3 guides gratuits',
+                'title_white' => 'pour maîtriser ton acquisition client (même sans nous)',
+                'description' => 'Nos meilleures stratégies en libre accès. Télécharge, applique, et vois les résultats dès cette semaine. Aucune CB requise, aucun spam.',
                 'cta_all' => 'Voir tous les ebooks',
             ];
 
@@ -140,24 +119,28 @@ class AppServiceProvider extends ServiceProvider
         View::composer('components.stats-section', function ($view) {
             $stats = [
                 [
-                    'value' => 100,
-                    'suffix' => '',
-                    'label' => 'Clients accompagnés',
+                    'value' => 13,
+                    'suffix' => '+',
+                    'label' => 'Marques accompagnées',
+                    'precision' => 'De 15K€ à 80K€/mois',
                 ],
                 [
-                    'value' => 24,
-                    'suffix' => 'M€',
-                    'label' => 'de CA généré pour nos clients',
+                    'value' => 1,
+                    'suffix' => 'M€+',
+                    'label' => 'De CA généré pour nos clients',
+                    'precision' => 'En 24 mois d\'activité',
                 ],
                 [
-                    'value' => 92,
+                    'value' => 180,
                     'suffix' => '%',
-                    'label' => 'de satisfaction clients',
+                    'label' => 'De ROAS moyen',
+                    'precision' => '1€ investi = 1,80€ de retour minimum',
                 ],
                 [
-                    'value' => 300,
-                    'suffix' => 'K€',
-                    'label' => 'gérés mensuellement',
+                    'value' => 1100,
+                    'suffix' => '+',
+                    'label' => 'Créatives testées',
+                    'precision' => 'On sait ce qui marche en 2025',
                 ]
             ];
             $view->with('stats', $stats);
@@ -166,7 +149,7 @@ class AppServiceProvider extends ServiceProvider
         View::composer('components.testimonials-carousel', function ($view) {
             $testimonials = [
                 [
-                    'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
+                    'quote' => "J’ai le plaisir de collaborer avec clicup dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                     'name'  => 'Elise Roux',
                     'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                     'rating' => 5,
@@ -195,7 +178,7 @@ class AppServiceProvider extends ServiceProvider
                 ],
                 // doublons pour le carousel
                 [
-                    'quote' => "J’ai le plaisir de collaborer avec ClickUp dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
+                    'quote' => "J’ai le plaisir de collaborer avec clicup dans le cadre de la gestion de nos campagnes. Réactivité, professionnalisme et recommandations de grande qualité.",
                     'name'  => 'Elise Roux',
                     'role'  => 'Responsable Marketing Digital & Ecommerce — POLAR',
                     'rating' => 5,
@@ -243,9 +226,8 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('components.section-call', function ($view) {
             $callToAction = [
-                'title' => "Tu veux transformer ton business en machine à vendre",
-                'subtitle' => "Réserve ton appel découverte, parle-nous de tes galères,
-                       et on t’apporte un plan clair + la méthode CREA™ pour les résoudre.",
+                'title' => "Prêt à scaler sans stress",
+                'subtitle' => "Réserve ton appel découverte de 30 minutes. On analyse ton compte, on identifie tes fuites budgétaires, et on te propose un plan d'action concret même si tu ne deviens pas client.",
                 'button' => "Réserve ton appel maintenant",
             ];
 
@@ -254,7 +236,7 @@ class AppServiceProvider extends ServiceProvider
                 ['name' => 'name', 'label' => 'Nom complet', 'type' => 'text', 'required' => true],
                 ['name' => 'email', 'label' => 'Adresse email', 'type' => 'email', 'required' => true],
                 ['name' => 'phone', 'label' => 'Téléphone', 'type' => 'tel', 'required' => false],
-                ['name' => 'company', 'label' => 'Entreprise', 'type' => 'text', 'required' => false],
+                ['name' => 'company', 'label' => 'Nom de la marque', 'type' => 'text', 'required' => false],
                 ['name' => 'date', 'label' => 'Choisis ta date', 'type' => 'date', 'required' => true],
                 ['name' => 'time', 'label' => 'Horaire préféré', 'type' => 'time', 'required' => true],
                 ['name' => 'message', 'label' => 'Parle-nous de tes galères', 'type' => 'textarea', 'required' => false],

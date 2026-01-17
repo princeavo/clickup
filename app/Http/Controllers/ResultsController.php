@@ -28,7 +28,7 @@ class ResultsController extends Controller
                         'ROI de 4.2x sur les campagnes',
                         'Coût d\'acquisition réduit de 35%',
                     ],
-                    'testimonial' => 'ClickUp a transformé notre présence sur TikTok. Les résultats ont dépassé toutes nos attentes !',
+                    'testimonial' => 'clicup a transformé notre présence sur TikTok. Les résultats ont dépassé toutes nos attentes !',
                     'link' => '#',
                 ],
                 [
@@ -58,7 +58,7 @@ class ResultsController extends Controller
                         'Notoriété de marque x5',
                         'Communauté engagée de 50k followers',
                     ],
-                    'testimonial' => 'De zéro à héros en quelques mois. ClickUp a boosté notre croissance de façon incroyable.',
+                    'testimonial' => 'De zéro à héros en quelques mois. clicup a boosté notre croissance de façon incroyable.',
                     'link' => '#',
                 ],
                 [
@@ -73,7 +73,7 @@ class ResultsController extends Controller
                         'Panier moyen augmenté de 45%',
                         'Taux de rétention client de 68%',
                     ],
-                    'testimonial' => 'Notre chiffre d\'affaires a explosé grâce à leur expertise. Merci ClickUp !',
+                    'testimonial' => 'Notre chiffre d\'affaires a explosé grâce à leur expertise. Merci clicup !',
                     'link' => '#',
                 ],
                 [
@@ -103,7 +103,7 @@ class ResultsController extends Controller
                         'Rupture de stock en 1 mois',
                         'Buzz viral avec 2M de vues',
                     ],
-                    'testimonial' => 'Notre lancement a été un carton grâce à ClickUp. Produit sold out en un mois !',
+                    'testimonial' => 'Notre lancement a été un carton grâce à clicup. Produit sold out en un mois !',
                     'link' => '#',
                 ],
             ]

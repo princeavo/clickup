@@ -10,7 +10,7 @@ class AgencyController extends Controller
     {
         $hero = [
             'badge'       => "Agence Performance Ads",
-            'button_text' => "Obtenir ton rdv (GRATUIT)",
+            'button_text' => "Découvre notre méthode",
             'button_link' => "#",
             'image'       => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6844e9c4c42ade07a2fc0151_d5e067220d46bcfa4b1820c210b78054_agence-image.webp', // remplace par ton visuel
             'image_alt'   => "Illustration de machine à vendre / marketing performance",
@@ -69,18 +69,18 @@ class AgencyController extends Controller
             'subtitle' => "Notre mission est de rendre cela possible, d’abord pour nos clients en Afrique et en Europe, puis dans le monde entier.",
             'values' => [
                 [
-                    'title' => "Performance & stratégie",
-                    'description' => "Spécialistes pub qui maximisent ta visibilité, ton ROI et tes conversions. Une seule obsession : tes résultats.",
+                    'title' => "Obsession de la performance",
+                    'description' => "Chaque décision est data-driven. Chaque euro tracké. Chaque campagne optimisée pour le ROAS, pas les vanity metrics. On ne garde que ce qui rapporte. Promesse : +180% de ROAS minimum.",
                     'icon' => 'fa-solid fa-chart-line',
                 ],
                 [
-                    'title' => "Satisfaction client",
-                    'description' => "Tes besoins au centre, tes attentes dépassées. On livre plus que prévu.",
+                    'title' => "Partenaire, pas prestataire",
+                    'description' => "On devient ton bras droit acquisition. Point hebdo, dashboard temps réel, WhatsApp direct. Question à 22h ? On répond. Engagement : transparence totale, zéro langue de bois, résultats mesurables.",
                     'icon' => 'fa-solid fa-heart',
                 ],
                 [
-                    'title' => "Innovation & IA",
-                    'description' => "L’intelligence artificielle et l’automatisation sont au cœur de notre ADN. Objectif : se concentrer sur ce qui compte vraiment — créer des campagnes rentables.",
+                    'title' => "On teste avant tout le monde",
+                    'description' => "IA générative pour les créatives, automation avancée, nouveaux placements... On teste tout pour un avantage concurrentiel. Ce qui marche, tu en bénéficies en premier. Résultat : toujours une longueur d'avance.",
                     'icon' => 'fa-solid fa-robot',
                 ],
             ],

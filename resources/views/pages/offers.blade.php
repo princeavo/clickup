@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Nos Offres - ClickUp')
+@section('title', 'Nos Offres - clicup')
 
 @section('hero')
     <x-offers.hero 

@@ -1,4 +1,4 @@
-<section class="relative bg-neutral-800 py-24 overflow-hidden">
+<section class="relative bg-black py-24 overflow-hidden">
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#ff8c00]/10 rounded-full blur-3xl"></div>
@@ -12,7 +12,7 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <span class="text-orange-400">Pourquoi</span> nous avons créé ClickUp
+            <span class="text-orange-400">Pourquoi</span> ClicUP existe
         </h2>
 
         <x-animated-highlight />
@@ -22,8 +22,8 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            Le constat était brutal : trop d'agences vendent du rêve à prix d'or, mais livrent des résultats décevants.
-            <span class="text-orange-400 font-semibold">ClickUp naît d'une conviction simple : apporter de la performance réelle.</span>
+            Le constat était simple : trop d'agences vendent du rêve à prix d'or, mais livrent des résultats médiocres.
+            <span class="font-semibold">Nous avons créé ClicUP pour offrir l'inverse : transparence totale, obsession des résultats, zéro bullshit.</span>
         </p>
 
         {{-- 3 Divisions horizontales --}}
@@ -50,27 +50,21 @@
                         </svg>
                     </div>
 
-                    {{-- Numéro --}}
-                    <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-red-500/20 text-red-400 font-bold text-lg">
-                        01
-                    </div>
-
                     {{-- Titre --}}
                     <h3 class="text-2xl font-bold text-white mb-4 text-center">
-                        Le Problème
+                        Ce qu'on a vu (et détesté)
                     </h3>
 
                     {{-- Description --}}
                     <p class="text-gray-300 text-center leading-relaxed">
-                        Des agences qui promettent la lune mais livrent des campagnes médiocres. 
-                        Résultat ? Budget gaspillé, temps perdu, et zéro retour sur investissement.
+                        Des agences qui facturent 5K€/mois pour des résultats inexistants. Des "experts" qui copient-collent les mêmes stratégies. Des budgets pub gaspillés sans analyse sérieuse.<br><br>
+                        <span class="text-red-400 font-semibold">Un marché plein de promesses, vide de résultats.</span>
                     </p>
 
                     {{-- Badge --}}
                     <div class="mt-6 text-center">
                         <span class="inline-block px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm font-semibold">
-                            ❌ Trop de promesses vides
+                            Le Problème
                         </span>
                     </div>
                 </div>
@@ -85,7 +79,7 @@
                 
                 <div class="relative h-full bg-[#111111]/80 backdrop-blur-xl rounded-2xl p-8 border border-[#ff8c00]/50 
                             hover:border-[#ffb845] transition-all duration-500 hover:shadow-lg hover:shadow-[#ff8c00]/30
-                            hover:-translate-y-2 ring-2 ring-[#ff8c00]/20">
+                            hover:-translate-y-2 ring-2 ring-[#ff8c00]/20 shadow-2xl shadow-[#ff8c00]/40 scale-105 z-10">
                     
                     {{-- Icône --}}
                     <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full 
@@ -95,12 +89,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
                                   d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
-                    </div>
-
-                    {{-- Numéro --}}
-                    <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-[#ff8c00]/20 text-orange-400 font-bold text-lg">
-                        02
                     </div>
 
                     {{-- Badge "Notre approche" --}}
@@ -113,19 +101,19 @@
 
                     {{-- Titre --}}
                     <h3 class="text-2xl font-bold text-orange-400 mb-4 text-center">
-                        Notre Solution
+                        Ce qu'on fait différemment
                     </h3>
 
                     {{-- Description --}}
                     <p class="text-gray-300 text-center leading-relaxed">
-                        <span class="text-orange-400 font-semibold">Laser-focus sur Facebook & TikTok Ads.</span> 
-                        Zéro service inutile, que des résultats qui se voient sur ton compte en banque.
+                        On ne travaille qu'avec des e-commerces qu'on SAIT pouvoir faire scaler. On met en place la méthode CREA™ : un système cyclique qui élimine l'aléatoire. Dashboard en temps réel, point hebdo, WhatsApp direct.<br><br>
+                        <span class="text-orange-400 font-semibold">Si ça ne performe pas, on ajuste ou on arrête.</span>
                     </p>
 
                     {{-- Badge --}}
                     <div class="mt-6 text-center">
                         <span class="inline-block px-4 py-2 rounded-full bg-[#ff8c00]/20 text-orange-400 text-sm font-semibold">
-                            ⚡ Performance réelle
+                            Notre Solution
                         </span>
                     </div>
                 </div>
@@ -152,26 +140,21 @@
                         </svg>
                     </div>
 
-                    {{-- Numéro --}}
-                    <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-green-500/20 text-green-400 font-bold text-lg">
-                        03
-                    </div>
-
                     {{-- Titre --}}
                     <h3 class="text-2xl font-bold text-white mb-4 text-center">
-                        Le Résultat
+                        Ce que tu obtiens
                     </h3>
 
                     {{-- Description --}}
                     <p class="text-gray-300 text-center leading-relaxed">
-                        Des campagnes qui convertissent vraiment. Ton budget pub devient une machine à vendre prévisible et rentable.
+                        Un flux constant de ventes prévisibles. Fini les montagnes russes (40K€ un mois, 18K€ le suivant). Un partenaire qui connaît ton business. Une croissance stable, scalable, et rentable.<br><br>
+                        <span class="text-green-400 font-semibold">Objectif : x2 à x3 ton CA en 6-12 mois.</span>
                     </p>
 
                     {{-- Badge --}}
                     <div class="mt-6 text-center">
                         <span class="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm font-semibold">
-                            ✅ ROI garanti
+                            Le Résultat
                         </span>
                     </div>
                 </div>
@@ -192,6 +175,13 @@
                 qui rapportent."
             </blockquote>
             <p class="mt-4 text-gray-400">— L'équipe ClickUp</p>
+            
+            {{-- CTA Button --}}
+            <div class="mt-8">
+                <x-button variant="primary" href="#contact">
+                    Réserve ton appel découverte
+                </x-button>
+            </div>
         </div>
 
     </div>
