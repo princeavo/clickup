@@ -14,7 +14,7 @@
 @section('content')
     <main class="pt-16">
         <!-- Section Offres -->
-        <x-offers.pricing :offers="$offers" />
+        <x-offers.pricing :offers="$offers" :creative-offers="$creativeOffers" />
 
         <!-- Section Lead Magnets -->
         <x-offers.lead-magnets :lead-magnets="$leadMagnets" />
