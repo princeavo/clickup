@@ -127,13 +127,29 @@
 
     <!-- CTA en bas -->
     <div class="text-center mt-12 opacity-0 translate-y-6 transition-all duration-700 ease-out"
-        x-data x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
+        x-data="{ isHovered: false }"
+        x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
                                  $el.classList.add('opacity-100','translate-y-0')">
-        <x-button href="{{ $intro['cta']['link'] }}" variant="primary" class="text-lg px-10 py-4">
-            {{ $intro['cta']['text'] }}
-        </x-button>
+        <div @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+            <x-button href="{{ $intro['cta']['link'] }}" variant="primary" class="text-lg px-10 py-4">
+                {{ $intro['cta']['text'] }}
+            </x-button>
+        </div>
         @if(isset($intro['cta']['subtext']))
-            <p class="text-sm text-gray-400 mt-3">{{ $intro['cta']['subtext'] }}</p>
+            <p class="text-sm text-gray-400 mt-3 transition-all duration-300"
+               :class="isHovered ? 'animate-blink text-base font-semibold' : ''">
+                {{ $intro['cta']['subtext'] }}
+            </p>
         @endif
     </div>
 </section>
+
+<style>
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.animate-blink {
+  animation: blink 0.8s ease-in-out infinite;
+}
+</style>

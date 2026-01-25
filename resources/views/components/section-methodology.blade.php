@@ -139,7 +139,7 @@
     <div class="text-center mt-12 opacity-0 translate-y-6 transition-all duration-700 ease-out"
          x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6');
                             $el.classList.add('opacity-100','translate-y-0')">
-        <x-button variant="primary" href="#contact">
+        <x-button variant="primary" href="/offers#pricing">
             Je veux cette méthode
         </x-button>
     </div>

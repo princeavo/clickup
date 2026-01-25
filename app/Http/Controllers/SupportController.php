@@ -126,7 +126,7 @@ class SupportController extends Controller
                 'title' => "L'accompagnement complet pour scaler ta marque <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00]'>de 15K à 100K€/mois</span>",
                 'subtitle' => "On installe un système d'acquisition prévisible pour ta marque. Fini les montagnes russes bienvenue dans la croissance stable et rentable.",
                 'button_text' => "Réserve ton audit gratuit (30 min)",
-                'button_link' => url('contact'),
+                'button_link' => '#contact',
                 'image' => Storage::disk('public')->url('accompagnements/hero.png')
             ],
             'whyUs' => [
@@ -199,7 +199,7 @@ class SupportController extends Controller
                 ],
                 'cta' => [
                     'text' => 'Réserve ton appel découverte maintenant',
-                    'link' => '/contact',
+                    'link' => '#contact',
                     'subtext' => '30 minutes pour voir si on peut t\'aider. Aucune obligation. Audit offert.',
                 ],
                 'steps' => [

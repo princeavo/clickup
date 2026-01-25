@@ -11,7 +11,7 @@ class AgencyController extends Controller
         $hero = [
             'badge'       => "Agence Performance Ads",
             'button_text' => "Découvre notre méthode",
-            'button_link' => "#",
+            'button_link' => "/support",
             'image'       => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6844e9c4c42ade07a2fc0151_d5e067220d46bcfa4b1820c210b78054_agence-image.webp', // remplace par ton visuel
             'image_alt'   => "Illustration de machine à vendre / marketing performance",
         ];

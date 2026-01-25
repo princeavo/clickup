@@ -1,7 +1,7 @@
 @props([
     'badge' => null,
     'buttonText' => 'Découvre notre méthode',
-    'buttonLink' => '#rendezvous',
+    'buttonLink' => '/support',
     'image' => null,
     'imageAlt' => 'Illustration',
 ])
