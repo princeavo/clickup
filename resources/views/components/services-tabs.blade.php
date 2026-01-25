@@ -48,11 +48,6 @@
                 <template x-for="(service, index) in {{ json_encode($services) }}" :key="index">
                     <template x-if="tab === index">
                         <div>
-                            <!-- Prix -->
-                            <div class="text-center mb-8" x-show="service.price">
-                                <p class="text-2xl font-bold text-orange-400" x-text="service.price"></p>
-                            </div>
-                            
                             <!-- Cartes -->
                             <div x-transition:enter="transition ease-out duration-700"
                                 x-transition:enter-start="opacity-0 scale-95 translate-y-4"
@@ -109,6 +104,16 @@
                         </div>
                     </template>
                 </template>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center mt-12
+                        opacity-0 translate-y-6 transition-all duration-700 ease-out delay-500"
+                 x-data
+                 x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')">
+                <x-button href="{{ route('offers') }}#pricing" variant="primary" class="text-lg">
+                    Voir toutes nos offres
+                </x-button>
             </div>
 
         </div>

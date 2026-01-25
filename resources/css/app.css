@@ -10,6 +10,8 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
     --font-display: "Fjalla One", ui-sans-serif, system-ui, sans-serif;
+    --font-nav: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+    --font-caption: "Merriweather", Georgia, serif;
 }
 
 body {
@@ -19,7 +21,7 @@ body {
     font-family: var(--font-sans);
 }
 
-/* Police Fjalla One pour les éléments essentiels */
+/* Titres - Fjalla One */
 h1, h2, h3, h4, h5, h6,
 .font-display {
     font-family: var(--font-display);
@@ -27,12 +29,36 @@ h1, h2, h3, h4, h5, h6,
     letter-spacing: 0.02em;
 }
 
-/* Boutons et CTA avec Fjalla One */
+/* Navigation - Montserrat (alternative à Acumin Pro) */
+nav,
+.nav-link,
+header a,
+.menu-item {
+    font-family: var(--font-nav);
+    font-weight: 500;
+}
+
+/* Boutons - Fjalla One Bold */
 button,
 .btn,
+a[class*="btn"],
 [class*="bg-orange"],
 [class*="border-orange"] {
     font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+/* Petits textes et légendes - Merriweather (alternative à Minion Pro) */
+.text-xs,
+.text-sm,
+caption,
+figcaption,
+.caption,
+.legend,
+small {
+    font-family: var(--font-caption);
+    font-weight: 300;
 }
 
 @keyframes fade-in-up {

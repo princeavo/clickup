@@ -12,7 +12,7 @@
             x-data
             x-intersect:enter="$el.classList.remove('opacity-0','translate-y-6'); $el.classList.add('opacity-100','translate-y-0')"
             x-intersect:leave="$el.classList.add('opacity-0','translate-y-6'); $el.classList.remove('opacity-100','translate-y-0')">
-            <span class="text-orange-400">Pourquoi</span> ClicUP existe
+            Pourquoi<span class="text-orange-400"> ClicUP existe</span>
         </h2>
 
         <x-animated-highlight />
@@ -37,12 +37,13 @@
                 x-intersect:leave="$el.classList.add('opacity-0','translate-y-10'); $el.classList.remove('opacity-100','translate-y-0')">
                 
                 <div class="relative h-full bg-[#111111]/80 backdrop-blur-xl rounded-2xl p-8 border border-gray-800 
-                            hover:border-[#ff8c00]/50 transition-all duration-500 hover:shadow-lg hover:shadow-[#ff8c00]/20
+                            hover:border-[#ff8c00] transition-all duration-500 hover:shadow-lg hover:shadow-[#ff8c00]/30
                             hover:-translate-y-2">
                     
                     {{-- Icône --}}
                     <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full 
-                                bg-gradient-to-br from-red-500 to-red-600 shadow-lg
+                                bg-gradient-to-br from-gray-700 to-gray-800 shadow-lg
+                                group-hover:from-[#ffb845] group-hover:to-[#ff8c00]
                                 transform transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -58,12 +59,12 @@
                     {{-- Description --}}
                     <p class="text-gray-300 text-center leading-relaxed">
                         Des agences qui facturent 5K€/mois pour des résultats inexistants. Des "experts" qui copient-collent les mêmes stratégies. Des budgets pub gaspillés sans analyse sérieuse.<br><br>
-                        <span class="text-red-400 font-semibold">Un marché plein de promesses, vide de résultats.</span>
+                        <span class="text-gray-400 font-semibold">Un marché plein de promesses, vide de résultats.</span>
                     </p>
 
                     {{-- Badge --}}
                     <div class="mt-6 text-center">
-                        <span class="inline-block px-4 py-2 rounded-full bg-red-500/10 text-red-400 text-sm font-semibold">
+                        <span class="inline-block px-4 py-2 rounded-full bg-gray-800/50 text-gray-300 text-sm font-semibold">
                             Le Problème
                         </span>
                     </div>
@@ -127,12 +128,13 @@
                 x-intersect:leave="$el.classList.add('opacity-0','translate-y-10'); $el.classList.remove('opacity-100','translate-y-0')">
                 
                 <div class="relative h-full bg-[#111111]/80 backdrop-blur-xl rounded-2xl p-8 border border-gray-800 
-                            hover:border-green-500/50 transition-all duration-500 hover:shadow-lg hover:shadow-green-500/20
+                            hover:border-[#ffb845] transition-all duration-500 hover:shadow-lg hover:shadow-[#ffb845]/30
                             hover:-translate-y-2">
                     
                     {{-- Icône --}}
                     <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center rounded-full 
-                                bg-gradient-to-br from-green-500 to-green-600 shadow-lg
+                                bg-gradient-to-br from-[#ffb845] to-[#ffa500] shadow-lg
+                                group-hover:shadow-[#ffb845]/50
                                 transform transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                         <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
@@ -148,12 +150,12 @@
                     {{-- Description --}}
                     <p class="text-gray-300 text-center leading-relaxed">
                         Un flux constant de ventes prévisibles. Fini les montagnes russes (40K€ un mois, 18K€ le suivant). Un partenaire qui connaît ton business. Une croissance stable, scalable, et rentable.<br><br>
-                        <span class="text-green-400 font-semibold">Objectif : x2 à x3 ton CA en 6-12 mois.</span>
+                        <span class="text-[#ffb845] font-semibold">Objectif : x2 à x3 ton CA en 6-12 mois.</span>
                     </p>
 
                     {{-- Badge --}}
                     <div class="mt-6 text-center">
-                        <span class="inline-block px-4 py-2 rounded-full bg-green-500/10 text-green-400 text-sm font-semibold">
+                        <span class="inline-block px-4 py-2 rounded-full bg-[#ffb845]/10 text-[#ffb845] text-sm font-semibold">
                             Le Résultat
                         </span>
                     </div>

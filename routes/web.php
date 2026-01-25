@@ -7,6 +7,7 @@ use App\Http\Controllers\ResultsController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OffersController;
+use App\Http\Controllers\SocialFeedController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -18,6 +19,13 @@ Route::get('/agency', [AgencyController::class, 'index'])->name('agency');
 Route::get('/results', [ResultsController::class, 'index'])->name('results');
 
 Route::get('/offers', [OffersController::class, 'index'])->name('offers');
+
+Route::get('/actualites', [SocialFeedController::class, 'index'])->name('social-feed');
+
+// API endpoints pour les posts sociaux
+Route::get('/api/facebook-posts', [SocialFeedController::class, 'apiFacebook'])->name('api.facebook-posts');
+Route::get('/api/linkedin-posts', [SocialFeedController::class, 'apiLinkedIn'])->name('api.linkedin-posts');
+Route::get('/api/social-posts', [SocialFeedController::class, 'apiAll'])->name('api.social-posts');
 
 // Route pour la soumission du formulaire de contact
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
