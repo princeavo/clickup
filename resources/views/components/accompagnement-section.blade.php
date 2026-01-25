@@ -4,7 +4,7 @@
     'subtitle' =>
         "Chez <span class='text-transparent bg-clip-text bg-gradient-to-r from-[#ffb845] to-[#ff8c00] font-semibold'>ClicUp</span> : pas de jolies pubs, des machines à vendre Facebook & TikTok qui rapportent",
     'points' => ['Tu te concentres sur ton business', 'Chaque € investi rapporte', 'On gère, tu encaisses'],
-    'cta' => ['text' => 'Notre Accompagnement', 'href' => '#'],
+    'cta' => ['text' => 'Notre Accompagnement', 'href' => '/offers'],
     'items' => [
         [
             'title' => 'Rentabilité',
@@ -30,7 +30,13 @@
 ])
 
 <section x-data="{ shown: false }" x-intersect="shown = true" x-intersect:leave="shown = false"
-    class="relative py-16 md:py-20 bg-zinc-900 text-white overflow-hidden">
+    class="relative py-16 md:py-20 bg-black text-white overflow-hidden bg-cover bg-center bg-no-repeat"
+    style="
+    background-image: url('{{ asset('images/ebooks-bg.png') }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0b1520;">
     <!-- Fond halo -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full bg-[#ff8c00]/15 blur-3xl"></div>
@@ -102,7 +108,7 @@
                                     </h3>
 
                                     <!-- Description -->
-                                    <p class="text-gray-300 text-center leading-relaxed">
+                                    <p class="text-gray-300 text-center leading-relaxed font-normal">
                                         {{ $item['description'] }}</p>
                                 </div>
                             </div>

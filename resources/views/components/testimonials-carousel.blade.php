@@ -3,7 +3,7 @@
     'title_white' => 'qui en parlent le mieux',
     'subtitle' => null,
     'testimonials' => [],
-    'cta' => ['text' => 'Découvrir leurs transformations', 'href' => '#'],
+    'cta' => ['text' => 'Découvrir leurs transformations', 'href' => '/results'],
 ])
 
 <section x-data="testimonialCarousel({{ count($testimonials) }})" x-init="init()" @keydown.right.prevent="next()" @keydown.left.prevent="prev()"

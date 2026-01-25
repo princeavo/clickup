@@ -49,7 +49,7 @@ class HomeController extends Controller
                 "Chaque € investi rapporte",
                 "On gère, tu encaisses",
             ],
-            'cta' => ['text' => 'Notre Accompagnement', 'href' => '#'],
+            'cta' => ['text' => 'Notre Accompagnement', 'href' => '/offers'],
             'items' => [
                 ['title' => 'Rentabilité mesurée au centime près', 'description' => "Chaque euro est tracké. On optimise pour le ROAS, pas les vanity metrics. Si ça ne rapporte pas, on coupe. Objectif : +180% de ROAS minimum.", 'icon' => 'dollar-sign'],
                 ['title' => '+700 créatives testées, 13 marques accompagnées', 'description' => "On ne théorise pas, on teste. 2 ans d'expérience e-commerce. On sait ce qui marche. Tu bénéficies de notre courbe d'apprentissage.", 'icon' => 'award'],

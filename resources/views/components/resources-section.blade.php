@@ -2,8 +2,8 @@
     'title' => 'Pourquoi Facebook & TikTok sont deux leviers de croissance puissants en 2025',
     'subtitle' =>
         'Tes futurs clients scrollent 3h/jour sur ces plateformes. Si tu n\'y es pas avec une stratégie solide, tu laisses des millions sur la table.',
-    'cta' => 'Nos ressources',
-    'ctaUrl' => '#',
+    'cta' => 'La méhode',
+    'ctaUrl' => '/agency',
     'resources' => [],
 ])
 

@@ -1,6 +1,6 @@
 @props(['callToAction', 'formFields'])
 
-<section class="relative py-20 px-6 md:px-12 lg:px-20 bg-stone-900 text-gray-100 overflow-hidden">
+<section id="contact" class="relative py-20 px-6 md:px-12 lg:px-20 bg-stone-900 text-gray-100 overflow-hidden">
     <!-- Dégradés animés orange -->
     <div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#ff8c00]/10 via-[#0a1f2d] to-black"></div>
     <div class="absolute top-0 right-0 w-[25rem] h-[25rem] bg-[#ff8c00]/15 blur-3xl rounded-full animate-pulse"></div>
