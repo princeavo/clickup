@@ -26,7 +26,7 @@
 
         <!-- Image steps à droite -->
         <div class="relative flex justify-center md:justify-end items-center">
-            <img src="{{ asset('prospect-steps.png') }}"
+            <img src="{{ asset('images/ton-prospect-scroll.gif') }}"
                  alt="Étapes du prospect"
                  class="w-80 sm:w-96 md:w-[500px] lg:w-[600px] transition-all duration-700"
                  :class="shown ? 'opacity-100 scale-100 translate-x-0' : 'opacity-0 scale-50 translate-x-20'">

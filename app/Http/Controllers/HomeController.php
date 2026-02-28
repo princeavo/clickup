@@ -260,7 +260,7 @@ class HomeController extends Controller
             'subtitle' => "Des publicités qui <span class='font-semibold'>captent l’attention</span>, déclenchent l’émotion et transforment l’intérêt en <span class='font-semibold'>chiffre d’affaires</span>.",
             'cta' => 'Découvrir la méthode CREA™',
             'ctaUrl' => '/methode-crea',
-            'image' => 'https://www.creageneve.com/wp-content/uploads/2022/10/crea_homepage.jpg',
+            'image' => asset('images/methode-crea.png'),
         ];
 
         $prospect = [

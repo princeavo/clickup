@@ -12,7 +12,7 @@ class AgencyController extends Controller
             'badge'       => "Agence Performance Ads",
             'button_text' => "Découvre notre méthode",
             'button_link' => "/support",
-            'image'       => 'https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6844e9c4c42ade07a2fc0151_d5e067220d46bcfa4b1820c210b78054_agence-image.webp', // remplace par ton visuel
+            'image'       => asset('images/hero-agency.png'),
             'image_alt'   => "Illustration de machine à vendre / marketing performance",
         ];
 
@@ -26,40 +26,16 @@ class AgencyController extends Controller
             'subtitle' => "Derrière chaque campagne, une équipe dédiée à ton succès.",
             'team' => [
                 [
-                    'name' => "Jean Dupont",
+                    'name' => "Kévin Michozounnou",
                     'role' => "Co-fondateur",
                     'position' => "Expert Facebook Ads",
-                    'photo' => 'https://sm.ign.com/ign_fr/cover/a/avatar-gen/avatar-generations_bssq.jpg',
+                    'photo' => asset('images/team/kevin-michozounnou.jpg'),
                 ],
                 [
-                    'name' => "Marie Martin",
-                    'role' => "Co-fondatrice",
-                    'position' => "Experte TikTok Ads",
-                    'photo' => 'https://lumiere-a.akamaihd.net/v1/images/a_avatarpandorapedia_jakesully_16x9_1098_02_b13c4171.jpeg?region=0%2C0%2C1920%2C1080',
-                ],
-                [
-                    'name' => "Ali Ahmed",
-                    'role' => "Head of Strategy",
-                    'position' => "Growth Hacker",
-                    'photo' => 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
-                ],
-                [
-                    'name' => "Jean Dupont",
+                    'name' => "Géovani BOKOSSA",
                     'role' => "Co-fondateur",
-                    'position' => "Expert Facebook Ads",
-                    'photo' => 'https://sm.ign.com/ign_fr/cover/a/avatar-gen/avatar-generations_bssq.jpg',
-                ],
-                [
-                    'name' => "Marie Martin",
-                    'role' => "Co-fondatrice",
                     'position' => "Experte TikTok Ads",
-                    'photo' => 'https://lumiere-a.akamaihd.net/v1/images/a_avatarpandorapedia_jakesully_16x9_1098_02_b13c4171.jpeg?region=0%2C0%2C1920%2C1080',
-                ],
-                [
-                    'name' => "Ali Ahmed",
-                    'role' => "Head of Strategy",
-                    'position' => "Growth Hacker",
-                    'photo' => 'https://upload.wikimedia.org/wikipedia/en/8/86/Avatar_Aang.png',
+                    'photo' => asset('images/team/geovani-bokossa.png'),
                 ],
             ],
         ];

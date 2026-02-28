@@ -127,7 +127,7 @@ class SupportController extends Controller
                 'subtitle' => "On installe un système d'acquisition prévisible pour ta marque. Fini les montagnes russes bienvenue dans la croissance stable et rentable.",
                 'button_text' => "Réserve ton audit gratuit (30 min)",
                 'button_link' => '#contact',
-                'image' => Storage::disk('public')->url('accompagnements/hero.png')
+                'image' => asset('images/hero-accompagnement.jpg')
             ],
             'whyUs' => [
                 'title' => "3 raisons de choisir ClicUP plutôt qu'une autre agence",
@@ -158,7 +158,7 @@ class SupportController extends Controller
                         'number' => 1,
                         'title' => 'Audit & Clarté',
                         'week' => 'Semaine 1',
-                        'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684996da176738787dd9e4b2_refonte.webp",
+                        'image' => asset('images/accompagnement/audit.jpeg'),
                         'content' => "Audit complet de ton compte publicitaire et tunnel de vente. Identification des fuites budgétaires et opportunités. Clarification du positionnement et segments cibles. Livrables : audit PDF, feuille de route et 3 quick wins.",
                         'tags' => ['Analyse de compte', 'Objectifs clairs', 'Feuille de route'],
                     ],
@@ -166,7 +166,7 @@ class SupportController extends Controller
                         'number' => 2,
                         'title' => 'Refonte & Setup',
                         'week' => 'Semaine 2',
-                        'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684995ef6ddb2e1ba7e9bddd_audit.webp",
+                        'image' => asset('images/accompagnement/refonte.png'),
                         'content' => "Restructuration complète du compte. Installation des pixels Facebook & TikTok et tracking avancé. Création des audiences custom et lookalike. Production de 10-15 créatives. Livrables : compte prêt à scaler et créatives testables.",
                         'tags' => ['Restructuration', 'Tracking', 'Audiences', 'Créatives'],
                     ],
@@ -176,13 +176,13 @@ class SupportController extends Controller
                         'content' => "Lancement avec tests A/B continus. Suivi quotidien : ajustements budget, optimisation enchères, arrêt des losers. 10-15 nouvelles créatives/mois. Scaling progressif et point hebdo. Résultats : campagnes 24/7 et croissance stable.",
                         'week' => 'Semaine 3-8+',
                         'tags' => ['Suivi quotidien', 'A/B Testing', 'Optimisation', 'Scaling'],
-                        'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/684997174a9d876870fae016_pilotage.webp",
+                        'image' => asset('images/accompagnement/optimisation.png'),
                     ],
                     [
                         'number' => 4,
                         'title' => 'Reporting & Stratégie',
                         'week' => 'Mensuel',
-                        'image' => "https://cdn.prod.website-files.com/682d6c53727e1a42ddfafe91/6849975c03d8f92b68d3f0b2_reporting.webp",
+                        'image' => asset('images/accompagnement/reporting.jpeg'),
                         'content' => "Analyse mensuelle des performances. Identification des tendances et opportunités. Ajustement de la stratégie (budgets, audiences, créa). Recommandations tunnel de vente. Livrables : rapport détaillé, roadmap 30 jours et insights stratégiques.",
                         'tags' => ['Tableau de bord', 'Insights', 'Stratégie', 'Croissance continue'],
                     ],
