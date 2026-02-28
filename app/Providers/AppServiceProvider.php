@@ -275,7 +275,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         View::composer('components.whatsapp-button', function ($view) {
-            $view->with('whatsappLink', "https://wa.me/33612345678");
+            $view->with('whatsappLink', "https://chat.whatsapp.com/KbXtJoHEdU9INVfyQhlJCL");
         });
     }
 }
