@@ -63,8 +63,8 @@
                 class="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden rounded-3xl border border-white/10 bg-white/5">
                 <img src="{{ $image ?? asset('images/hero-agence.png') }}" alt="{{ $imageAlt }}" loading="lazy"
                     class="h-full w-full object-cover will-change-transform transition-transform duration-500 ease-out"
-                    :style="'transform: perspective(1000px) translate3d(' + ((mx - 150) / 30) + 'px,' + ((my - 150) / 30) +
-                    'px,0) rotateX(' + ((my - 150) / 80) + 'deg) rotateY(' + ((mx - 150) / -80) + 'deg) scale(1.02);'" />
+                    :style="'transform: perspective(1000px) translate3d(' + ((mx - 150) / 40) + 'px,' + ((my - 150) / 40) +
+                    'px,0) rotateX(' + ((my - 150) / 100) + 'deg) rotateY(' + ((mx - 150) / -100) + 'deg) scale(1.12);'" />
             </div>
         </div>
 

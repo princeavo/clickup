@@ -5,7 +5,7 @@
     <!-- Overlay -->
     <div class="absolute inset-0 -z-10"></div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6">
         <!-- Texte -->
         <div class="space-y-6 text-center md:text-left">
             <!-- Titre -->
