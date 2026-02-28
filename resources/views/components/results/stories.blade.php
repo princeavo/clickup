@@ -30,9 +30,10 @@
                     x-intersect:leave="shown = false"
                     x-bind:class="{ 'opacity-100 translate-y-0': shown, 'opacity-0 translate-y-10': !shown }"
                     style="transition-delay: {{ $index * 150 }}ms;"
-                    class="group relative bg-[#111111]/80 border border-gray-800 rounded-2xl overflow-hidden
-                           backdrop-blur-lg shadow-lg hover:shadow-2xl hover:border-[#ff8c00]/50
-                           transition-all duration-700 ease-out
+                    class="group relative bg-[#111111]/80 border border-[#ff8c00]/50 rounded-2xl overflow-hidden
+                           backdrop-blur-lg shadow-2xl shadow-[#ff8c00]/10
+                           hover:border-[#ffb845] hover:shadow-[0_0_40px_-5px_rgba(255,184,69,0.4)] hover:bg-[#1a1000]/90
+                           transition-all duration-500 ease-out
                            transform opacity-0 translate-y-10 hover:-translate-y-2">
 
                     <!-- Miniature avec badge -->
@@ -45,9 +46,9 @@
                             <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                         @else
                             {{-- Fallback brandé sans image --}}
-                            <div class="w-full h-full bg-gradient-to-br from-[#1a1a1a] via-[#0f1e2a] to-[#0a1f2d]
+                            <div class="w-full h-full bg-gradient-to-br from-[#1f1500] via-[#1a0e00] to-[#120900]
                                         flex flex-col items-center justify-center gap-3
-                                        group-hover:from-[#1f1500] group-hover:via-[#1a0e00] group-hover:to-[#120900]
+                                        group-hover:from-[#2d1a00] group-hover:via-[#1f1000] group-hover:to-[#150b00]
                                         transition-all duration-700">
                                 <span class="text-5xl font-black text-transparent bg-clip-text 
                                              bg-gradient-to-br from-[#ffb845] to-[#ff8c00] 
