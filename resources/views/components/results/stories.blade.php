@@ -1,6 +1,6 @@
 @props(['stories' => []])
 
-<section class="relative py-24 bg-gradient-to-b from-[#0a1f2d] to-[#04131c] text-white overflow-hidden">
+<section class="relative py-24 bg-[#050505] text-white overflow-hidden">
     <!-- Effets de fond -->
     <div class="absolute inset-0 -z-10">
         <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#ff8c00]/10 rounded-full blur-3xl"></div>
@@ -154,7 +154,7 @@
                                            class="inline-block w-full text-center px-4 py-2 rounded-lg font-semibold
                                                   bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black
                                                   hover:scale-105 transition-transform duration-300">
-                                            Voir le cas complet
+                                            Je veux les mêmes résultats →
                                         </a>
                                     </div>
                                 </div>
