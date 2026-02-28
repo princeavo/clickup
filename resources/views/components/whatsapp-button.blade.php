@@ -15,16 +15,16 @@
         x-transition:leave-end="opacity-0 translate-x-4"
         style="display: none;"
         class="flex items-center gap-2 bg-white text-gray-900 text-sm font-semibold
-               px-4 py-2.5 rounded-full shadow-xl border border-green-100
+               px-4 py-2.5 rounded-full shadow-xl border border-orange-200
                whitespace-nowrap pointer-events-none select-none"
     >
-        <span class="text-green-500">
+        <span class="text-[#ff8c00]">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.42 0 .09 5.33.09 11.92c0 2.1.56 4.12 1.62 5.93L0 24l6.32-1.66a11.9 11.9 0 0 0 5.7 1.45h.01c6.6 0 11.93-5.33 11.93-11.92a11.86 11.86 0 0 0-3.44-8.37Z"/>
             </svg>
         </span>
         Intégrer la communauté ·
-        <span class="text-green-600 flex items-center gap-1 font-bold">
+        <span class="text-[#ff8c00] flex items-center gap-1 font-bold">
             La machine à ventes
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
