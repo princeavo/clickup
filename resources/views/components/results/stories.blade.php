@@ -37,13 +37,29 @@
 
                     <!-- Miniature avec badge -->
                     <div class="relative w-full h-56 overflow-hidden">
-                        <img src="{{ $story['thumbnail'] ?? $story['image'] }}" 
-                             alt="{{ $story['brand'] }}"
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                        
-                        <!-- Overlay gradient -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        
+                        @if(!empty($story['image']))
+                            <img src="{{ $story['thumbnail'] ?? $story['image'] }}" 
+                                 alt="{{ $story['brand'] }}"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <!-- Overlay gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                        @else
+                            {{-- Fallback brandé sans image --}}
+                            <div class="w-full h-full bg-gradient-to-br from-[#1a1a1a] via-[#0f1e2a] to-[#0a1f2d]
+                                        flex flex-col items-center justify-center gap-3
+                                        group-hover:from-[#1f1500] group-hover:via-[#1a0e00] group-hover:to-[#120900]
+                                        transition-all duration-700">
+                                <span class="text-5xl font-black text-transparent bg-clip-text 
+                                             bg-gradient-to-br from-[#ffb845] to-[#ff8c00] 
+                                             group-hover:scale-110 transition-transform duration-500 select-none">
+                                    {{ strtoupper(substr($story['brand'], 0, 2)) }}
+                                </span>
+                                <div class="w-12 h-0.5 bg-gradient-to-r from-[#ffb845] to-[#ff8c00] rounded-full"></div>
+                            </div>
+                            <!-- Overlay gradient -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                        @endif
+
                         <!-- Badge objectif -->
                         <div class="absolute top-4 left-4">
                             <span class="inline-block px-3 py-1 text-xs font-bold rounded-full
@@ -146,11 +162,6 @@
                         </div>
                     </div>
 
-                    <!-- Badge numéro -->
-                    <div class="absolute top-4 right-4 w-10 h-10 flex items-center justify-center rounded-full 
-                                bg-black/50 backdrop-blur-sm border border-[#ff8c00]/30 text-orange-400 font-bold text-sm">
-                        {{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}
-                    </div>
                 </div>
             @endforeach
         </div>
