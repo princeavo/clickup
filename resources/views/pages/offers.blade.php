@@ -16,11 +16,10 @@
         <!-- Section Offres -->
         <x-offers.pricing :offers="$offers" :creative-offers="$creativeOffers" />
 
-        <!-- Section Lead Magnets -->
-        <x-offers.lead-magnets :lead-magnets="$leadMagnets" />
+        <!-- Section FAQ + Garanties -->
+        <x-offers.faq-guarantees :faqs="$faqs" :guarantees="$guarantees" />
 
-        <!-- Section Ressources -->
-        <x-offers.resources :resources="$resources" />
+
 
         <!-- Stats Section -->
         <x-stats-section />
