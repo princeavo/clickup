@@ -4,13 +4,23 @@
 ])
 
 <section x-data="ebookCarousel({{ count($ebooks) }})" x-init="init()"
-    class="relative bg-black py-20 px-6 lg:px-20 overflow-hidden text-white bg-cover bg-center bg-no-repeat"
-    style="
-    background-image: url('{{ asset('images/ebooks-bg.png') }}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #0b1520;">
+    class="relative py-20 px-6 lg:px-20 overflow-hidden text-white"
+    style="background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,0.08) 0%, transparent 70%),
+                       radial-gradient(ellipse 60% 50% at 80% 100%, rgba(249,115,22,0.05) 0%, transparent 60%),
+                       linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);">
+
+    {{-- Grille géométrique subtile --}}
+    <div class="pointer-events-none absolute inset-0 opacity-[0.03]"
+         style="background-image: linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+                                  linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px);
+                background-size: 48px 48px;"></div>
+
+    {{-- Ligne orange haute --}}
+    <div class="pointer-events-none absolute top-0 inset-x-0 h-px
+                bg-gradient-to-r from-transparent via-orange-500/40 to-transparent"></div>
+    {{-- Ligne orange basse --}}
+    <div class="pointer-events-none absolute bottom-0 inset-x-0 h-px
+                bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
 
     <!-- Header -->
     <div class="text-center max-w-3xl mx-auto mb-12">
