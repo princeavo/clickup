@@ -8,6 +8,7 @@ use App\Http\Controllers\SupportController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OffersController;
 use App\Http\Controllers\SocialFeedController;
+use App\Http\Controllers\AuditController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -21,6 +22,8 @@ Route::get('/results', [ResultsController::class, 'index'])->name('results');
 Route::get('/offers', [OffersController::class, 'index'])->name('offers');
 
 Route::get('/actualites', [SocialFeedController::class, 'index'])->name('social-feed');
+
+Route::get('/audit-offert', [AuditController::class, 'index'])->name('audit');
 
 // API endpoints pour les posts sociaux
 Route::get('/api/facebook-posts', [SocialFeedController::class, 'apiFacebook'])->name('api.facebook-posts');

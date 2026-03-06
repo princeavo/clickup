@@ -9,7 +9,8 @@
     'logo' => asset('logo-header.png'),
     'brand' => 'clicup',
     'ctaLabel' => 'Audit offert',
-    'ctaHref' => '/agency#contact',
+    'ctaHref'  => route('audit'),
+
     'bgImage' => asset('bg-header.jpg'),
 ])
 
