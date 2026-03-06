@@ -36,43 +36,60 @@
                            transition-all duration-500 ease-out
                            transform opacity-0 translate-y-10 hover:-translate-y-2">
 
-                    <!-- Miniature avec badge -->
-                    <div class="relative w-full h-56 overflow-hidden">
-                        @if(!empty($story['image']))
-                            <img src="{{ $story['thumbnail'] ?? $story['image'] }}" 
-                                 alt="{{ $story['brand'] }}"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <!-- Overlay gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        @else
-                            {{-- Fallback brandé sans image --}}
-                            <div class="w-full h-full bg-gradient-to-br from-[#1f1500] via-[#1a0e00] to-[#120900]
-                                        flex flex-col items-center justify-center gap-3
-                                        group-hover:from-[#2d1a00] group-hover:via-[#1f1000] group-hover:to-[#150b00]
-                                        transition-all duration-700">
-                                <span class="text-5xl font-black text-transparent bg-clip-text 
-                                             bg-gradient-to-br from-[#ffb845] to-[#ff8c00] 
-                                             group-hover:scale-110 transition-transform duration-500 select-none">
-                                    {{ strtoupper(substr($story['brand'], 0, 2)) }}
-                                </span>
-                                <div class="w-12 h-0.5 bg-gradient-to-r from-[#ffb845] to-[#ff8c00] rounded-full"></div>
+                    {{-- Header : fond brandé + avatar story circulaire (image ou initiales) --}}
+                    <div class="relative w-full h-56 overflow-hidden
+                                bg-gradient-to-br from-[#1f1500] via-[#1a0e00] to-[#120900]
+                                group-hover:from-[#2d1a00] group-hover:to-[#150b00] transition-all duration-700
+                                flex flex-col items-center justify-center gap-3">
+
+                        {{-- Avatar story --}}
+                        <div class="relative flex items-center justify-center flex-shrink-0"
+                             style="width:96px;height:96px;">
+
+                            {{-- Anneau conic-gradient tournant --}}
+                            <div class="absolute inset-0 rounded-full
+                                        group-hover:scale-110 transition-transform duration-500"
+                                 style="background: conic-gradient(from 0deg,#ff8c00,#ffb845,#ff6b35,#f97316,#ff8c00);
+                                        border-radius:50%;
+                                        animation: spin-story 4s linear infinite;
+                                        box-shadow: 0 0 18px rgba(249,115,22,0.55);"></div>
+
+                            {{-- Gap blanc entre anneau et avatar --}}
+                            <div class="absolute rounded-full bg-[#1a1000]"
+                                 style="width:84px;height:84px;"></div>
+
+                            {{-- Avatar (image ou initiales) --}}
+                            <div class="relative z-10 rounded-full overflow-hidden
+                                        flex items-center justify-center
+                                        bg-gradient-to-br from-[#2a1800] to-[#1a0e00]"
+                                 style="width:76px;height:76px;">
+                                @if(!empty($story['image']))
+                                    <img src="{{ $story['thumbnail'] ?? $story['image'] }}"
+                                         alt="{{ $story['brand'] }}"
+                                         class="w-full h-full object-cover object-center">
+                                @else
+                                    <span class="text-2xl font-black text-transparent bg-clip-text
+                                                 bg-gradient-to-br from-[#ffb845] to-[#ff8c00]
+                                                 select-none leading-none">
+                                        {{ strtoupper(substr($story['brand'], 0, 2)) }}
+                                    </span>
+                                @endif
                             </div>
-                            <!-- Overlay gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
-                        @endif
-
-                        <!-- Badge objectif -->
-                        <div class="absolute top-4 left-4">
-                            <span class="inline-block px-3 py-1 text-xs font-bold rounded-full
-                                         bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black shadow-lg">
-                                {{ $story['goal'] }}
-                            </span>
                         </div>
 
-                        <!-- Nom de la marque en bas -->
-                        <div class="absolute bottom-4 left-4 right-4">
-                            <h3 class="text-xl font-bold text-white drop-shadow-lg">{{ $story['brand'] }}</h3>
-                        </div>
+                        {{-- Nom de la marque sous l'avatar --}}
+                        <h3 class="text-base font-bold text-white drop-shadow-lg tracking-wide">
+                            {{ $story['brand'] }}
+                        </h3>
+
+                        {{-- Badge objectif --}}
+                        <span class="inline-block px-3 py-1 text-xs font-bold rounded-full
+                                     bg-gradient-to-r from-[#ffb845] to-[#ff8c00] text-black shadow-lg">
+                            {{ $story['goal'] }}
+                        </span>
+
+                        {{-- Overlay dégradé bas --}}
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
                     </div>
 
                     <!-- Contenu -->
@@ -180,4 +197,10 @@
             </x-button>
         </div>
     </div>
+    <style>
+        @keyframes spin-story {
+            from { transform: rotate(0deg); }
+            to   { transform: rotate(360deg); }
+        }
+    </style>
 </section>
